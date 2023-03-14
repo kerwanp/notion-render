@@ -25,6 +25,12 @@
       "options": {
         "lintFilePatterns": ["packages/notion-renderer/**/*.ts"]
       }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx semantic-release-plus --extends ./packages/notion-renderer/release.config.js"
+      }
     }
   },
   "tags": []
