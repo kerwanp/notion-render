@@ -2,6 +2,9 @@
   "name": "kerwan",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "prepare": "is-ci || husky install"
   },
