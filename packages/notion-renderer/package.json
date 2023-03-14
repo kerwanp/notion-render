@@ -6,5 +6,13 @@
   "module": "index.mjs",
   "devDependencies": {
     "@notionhq/client": "^2.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kerwanp/notion-renderer",
+    "directory": "packages/notion-renderer"
   }
 }
