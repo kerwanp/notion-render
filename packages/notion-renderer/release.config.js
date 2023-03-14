@@ -6,7 +6,7 @@ module.exports = {
   tagFormat: name + '-v${version}',
   commitPaths: [`${srcRoot}/*`],
   branches: [
-    { name: 'main', channel: 'pre/rc', prerelease: 'rc' },
+    { name: 'main' },
     { name: 'dev', channel: 'pre/rc', prerelease: 'rc' },
   ],
   plugins: [
