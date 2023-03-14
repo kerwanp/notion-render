@@ -27,6 +27,7 @@
       }
     },
     "release": {
+      "dependsOn": ["build"],
       "executor": "nx:run-commands",
       "options": {
         "command": "npx semantic-release-plus --extends ./packages/notion-renderer/release.config.js"
