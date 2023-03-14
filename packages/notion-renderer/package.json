@@ -4,7 +4,15 @@
   "type": "commonjs",
   "main": "index.js",
   "module": "index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kerwanp/notion-renderer",
+    "directory": "packages/notion-renderer"
+  },
   "devDependencies": {
     "@notionhq/client": "^2.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
