@@ -16,7 +16,7 @@ jobs:
         working-directory: ${{ github.workspace }}
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [18]
         npm-version: [8]
         yarn-version: [1.22.x]
         pnpm-version: [7]
@@ -107,7 +107,7 @@ jobs:
       - name: Release
         if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npx nx affected --target release --all --parallel=1
