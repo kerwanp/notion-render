@@ -1,0 +1,10 @@
+{
+  "name": "@kerwan/notion-renderer",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "index.js",
+  "module": "index.mjs",
+  "devDependencies": {
+    "@notionhq/client": "^2.2.3"
+  }
+}

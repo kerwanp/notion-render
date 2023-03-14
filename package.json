@@ -1,15 +1,46 @@
 {
-  "name": "notion-renderer",
+  "name": "kerwan",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "is-ci || husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@commitlint/cz-commitlint"
+    }
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
-    "@nrwl/js": "15.8.6",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-nx-scopes": "^17.4.3",
+    "@commitlint/cz-commitlint": "^17.4.4",
+    "@nrwl/eslint-plugin-nx": "15.8.6",
+    "@nrwl/js": "^15.8.6",
+    "@nrwl/linter": "15.8.6",
     "@nrwl/nx-cloud": "latest",
+    "@nrwl/vite": "15.8.6",
     "@nrwl/workspace": "15.8.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitest/ui": "^0.25.8",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "jsdom": "~20.0.3",
+    "lint-staged": "^13.2.0",
     "nx": "15.8.6",
-    "prettier": "^2.6.2"
-  }
+    "prettier": "^2.6.2",
+    "typescript": "~4.9.5",
+    "vite": "^4.0.1",
+    "vite-plugin-dts": "~1.7.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-tsconfig-paths": "^4.0.2",
+    "vitest": "^0.25.8"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

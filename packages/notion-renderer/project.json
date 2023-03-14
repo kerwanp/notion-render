@@ -1,0 +1,31 @@
+{
+  "name": "notion-renderer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/notion-renderer/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/notion-renderer"
+      }
+    },
+    "yalc-publish": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yalc publish",
+        "cwd": "dist/packages/notion-renderer"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/notion-renderer/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
