@@ -99,7 +99,6 @@ jobs:
             npm ci
           fi
       - run: |
-          npx nx workspace-lint
           npx nx format:check
           npx nx affected --target lint --parallel 3
           npx nx affected --target test --parallel 3 --ci --code-coverage

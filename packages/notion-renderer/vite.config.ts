@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 import dts from 'vite-plugin-dts';
 import { join } from 'path';
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/notion-renderer',
@@ -24,10 +24,10 @@ export default defineConfig({
       targets: [
         {
           src: '../../README.md',
-          dest: '.'
-        }
-      ]
-    })
+          dest: '.',
+        },
+      ],
+    }),
   ],
 
   // Uncomment this if you are using workers.
