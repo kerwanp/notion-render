@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "kerwan",
+  "npmScope": "kerwanp",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
