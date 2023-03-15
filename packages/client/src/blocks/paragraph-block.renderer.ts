@@ -2,8 +2,12 @@ import { ParagraphBlockObjectResponse } from '@notionhq/client/build/src/api-end
 import { createBlockRenderer } from '../utils/create-block-renderer';
 
 export default createBlockRenderer<ParagraphBlockObjectResponse>(
-    'paragraph',
-    (data, renderer) => {
-        return `<p>${renderer.render(...data.paragraph.rich_text)}</p>`;
-    }
+  'paragraph',
+  async (data, renderer) => {
+    return `
+            <p>
+                ${await renderer.render(...data.paragraph.rich_text)}
+            </p>
+        `;
+  }
 );

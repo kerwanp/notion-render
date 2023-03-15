@@ -7,7 +7,7 @@ import { join } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/notion-renderer',
+  cacheDir: '../../node_modules/.vite/notion-render',
 
   plugins: [
     dts({
@@ -45,7 +45,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'notion-renderer',
+      name: 'notion-render',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forgot to update your package.json as well.

@@ -1,9 +1,9 @@
 <div align="center">
 <br/>
 
-## @kerwan/notion-renderer
+## Notion Render
 
-### Transform [Notion](https://notion.so) Rich Text into HTML.
+### Transform [Notion](https://notion.so) Rich Text into HTML, JSX and more.
 
 <br/>
 </div>
@@ -14,13 +14,16 @@
 [![Commitizen friendly](https://img.shields.io/badge/Commitizen-Friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![License](https://img.shields.io/github/license/syneki/notion-cms?label=License&style=flat-square)](LICENCE)
 
-[![@kerwanp/notion-renderer](https://img.shields.io/npm/v/@kerwanp/notion-renderer?label=%40kerwanp%2Fnotion-renderer&style=flat-square)](https://www.npmjs.com/package/@kerwanp/notion-renderer)
+[![@kerwanp/notion-render](https://img.shields.io/npm/v/@kerwanp/notion-render?label=%40kerwanp%2Fnotion-render&style=flat-square)](https://www.npmjs.com/package/@kerwanp/notion-render)
 
 [![Managed with](https://img.shields.io/badge/Managed%20with-NX-blue.svg?style=flat-square&logo=nx)](https://nx.dev/)
 
 [🔨 Install](#🔨-install) •
 [🚀 Get started](#🚀-get-started) •
-[🔧 Extend](#🔧-extend) •
+[⚛ Renderers](#⚛-renderers) •
+[🎲 Blocks](#🎲-blocks) •
+[🔧 Extend](#🔧-extend)
+
 [Contribute](#contributing) •
 [License](#license)
 
@@ -35,15 +38,15 @@ Do not hesitate to open an issue to provide your feedback, report bugs and to pr
 # 🔨 Install
 
 ```shell
-$ npm install @kerwanp/notion-renderer
-$ yarn add @kerwanp/notion-renderer
+$ npm install @notion-render/client
+$ yarn add @notion-render/client
 ```
 
 # 🚀 Get started
 
 ```typescript
 import { Client } from '@notionhq/notion';
-import { NotionRenderer } from '@kerwanp/notion-renderer';
+import { NotionRenderer } from '@kerwanp/notion-render';
 
 const client = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -58,6 +61,55 @@ const { results } = await client.blocks.children.list({
 const html = renderer.render(...results);
 ```
 
+# ⚛ Renderers
+
+| Renderer | Status         |
+| -------- | -------------- |
+| HTML     | 🔶 In progress |
+| React    | ❌ Planned     |
+| VueJS    | ❌ Planned     |
+| Angular  | ❌ Planned     |
+
+# 🎲 Blocks
+
+| Block Type         | Supported              | Notion client required | Available in            | Notes                                           |
+| ------------------ | ---------------------- | ---------------------- | ----------------------- | ----------------------------------------------- |
+| Text               | ✅ Yes                 |                        | `@notion-render/client` | `<span>`                                        |
+| Bookmark           | ❌ Missing             |                        |                         |                                                 |
+| Breadcrumb         | ❌ Missing             |                        |                         | Embedded preview of external URL                |
+| Bulleted List Item | 🔶 Not fully supported |                        | `@notion-render/client` | `<li>` Not currently wrapped between `<ul>`     |
+| Callout            | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |
+| Child database     | ❌ Missing             |                        |                         |                                                 |
+| Child page         | ❌ Missing             |                        |                         |                                                 |
+| Code               | ✅ Yes                 |                        | `@notion-render/client` | <pre><code>                                     |
+| Column List        | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<div>`                                         |
+| Column             | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<div>`                                         |
+| Divider            | ✅ Yes                 |                        | `@notion-render/client` | `<hr>`                                          |
+| Embed              | ❌ Missing             |                        |                         |                                                 |
+| Equations          | ❌ Missing             |                        |                         |                                                 |
+| Files              | ❌ Missing             |                        |                         |                                                 |
+| Heading 1          | ✅ Yes                 |                        | `@notion-render/client` | `<h1>`                                          |
+| Heading 2          | ✅ Yes                 |                        | `@notion-render/client` | `<h2>`                                          |
+| Heading 3          | ✅ Yes                 |                        | `@notion-render/client` | `<h3>`                                          |
+| Toggle Heading 1   | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details><summary><h1>` Requires Notion client |
+| Toggle Heading 2   | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details><summary><h2>` Requires Notion client |
+| Toggle Heading 3   | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details><summary><h3>` Requires Notion client |
+| Image              | ✅ Yes                 |                        | `@notion-render/client` | `<fig><img>`                                    |
+| Link preview       | ❌ Missing             |                        |                         |                                                 |
+| Mention            | ❌ Missing             |                        |                         |                                                 |
+| Numbered List Item | 🔶 Not fully supported |                        |                         | `<li>` Not currently wrapped between `<ol>`     |
+| Paragraph          | ✅ Yes                 |                        | `@notion-render/client` | `<p>`                                           |
+| PDF                | ❌ Missing             |                        |                         |                                                 |
+| Quote              | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |
+| Synced block       | ❌ Missing             |                        |                         |                                                 |
+| Table              | 🔶 Not fully supported |                        | `@notion-render/client` | `<table>` Header row and column not supported   |
+| Table Row          | 🔶 Not fully supported |                        | `@notion-render/client` | `<tr>` Header row and column not supported      |
+| Table of contents  | ❌ Missing             |                        |                         |                                                 |
+| Template           | ❌ Deprecated          |                        |                         |                                                 |
+| To do              | 🔶 Not fully supported |                        | `@notion-render/client` | `<li>` Not currently wrapped between `<ul>`     |
+| Toggle             | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details>`                                     |
+| Video              | ✅ Missing             |                        |                         |                                                 |
+
 # 🔧 Extend
 
 ## Custom renderer
@@ -65,7 +117,7 @@ const html = renderer.render(...results);
 You can create custom renderers to handle custom Notion plugins and override existing blocks.
 
 ```typescript
-import { NotionRenderer, createBlockRenderer } from '@syneki/notion-renderer';
+import { NotionRenderer, createBlockRenderer } from '@syneki/notion-render';
 
 const paragraphRenderer = createBlockRenderer<ParagraphBlockObjectResponse>(
   'paragraph',

@@ -1,4 +1,4 @@
-const name = 'notion-renderer';
+const name = 'notion-render';
 const srcRoot = `packages/${name}`;
 
 module.exports = {

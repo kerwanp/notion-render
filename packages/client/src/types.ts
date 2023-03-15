@@ -3,14 +3,14 @@ import { NotionRenderer } from './notion-renderer';
 export type Type<T> = new () => T;
 
 export type Block = {
-    type: string;
+  type: string;
 };
 
 export type BlockRendererFunc<T extends Block> = (
-    data: T,
-    renderer: NotionRenderer
-) => string;
+  data: T,
+  renderer: NotionRenderer
+) => Promise<string>;
 
 export type BlockRenderer<T extends Block> = BlockRendererFunc<T> & {
-    type: string;
+  type: string;
 };

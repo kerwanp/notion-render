@@ -1,13 +1,13 @@
 {
-  "name": "@kerwanp/notion-renderer",
+  "name": "@notion-render/client",
   "version": "1.0.0-rc.1",
   "type": "commonjs",
   "main": "index.js",
   "module": "index.mjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kerwanp/notion-renderer",
-    "directory": "packages/notion-renderer"
+    "url": "https://github.com/kerwanp/notion-render",
+    "directory": "packages/client"
   },
   "devDependencies": {
     "@notionhq/client": "^2.2.3"
