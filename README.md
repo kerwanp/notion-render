@@ -108,7 +108,7 @@ const html = renderer.render(...results);
 | Template           | ❌ Deprecated          |                        |                         |                                                 |
 | To do              | 🔶 Not fully supported |                        | `@notion-render/client` | `<li>` Not currently wrapped between `<ul>`     |
 | Toggle             | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details>`                                     |
-| Video              | ✅ Missing             |                        |                         |                                                 |
+| Video              | ❌ Missing             |                        |                         |                                                 |
 
 # 🔧 Extend
 
