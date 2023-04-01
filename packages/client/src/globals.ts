@@ -18,9 +18,11 @@ import tableBlockRenderer from './blocks/table-block.renderer';
 import tableRowRenderer from './blocks/table-row.renderer.ts';
 import textBlockRenderer from './blocks/text-block.renderer';
 import toDoBlockRenderer from './blocks/to-do-block.renderer';
+import toDoListBlockRenderer from './blocks/to-do-list-block.renderer';
 import toggleBlockRenderer from './blocks/toggle-block.renderer';
 import bulletedListExtension from './extensions/bulleted-list.extension';
 import numberedListExtension from './extensions/numbered-list.extension';
+import toDoListExtension from './extensions/to-do-list.extension';
 import { BlockRenderer, ExtensionFunc } from './types';
 
 export const BLOCK_RENDERERS: BlockRenderer<any>[] = [
@@ -42,6 +44,7 @@ export const BLOCK_RENDERERS: BlockRenderer<any>[] = [
   columnListBlockRenderer,
   columnBlockRenderer,
   toggleBlockRenderer,
+  toDoListBlockRenderer,
   toDoBlockRenderer,
   tableBlockRenderer,
   tableRowRenderer,
@@ -50,4 +53,5 @@ export const BLOCK_RENDERERS: BlockRenderer<any>[] = [
 export const EXTENSIONS: ExtensionFunc[] = [
   numberedListExtension,
   bulletedListExtension,
+  toDoListExtension,
 ];

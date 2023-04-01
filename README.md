@@ -106,7 +106,7 @@ const html = renderer.render(...results);
 | Table Row          | 🔶 Not fully supported |                        | `@notion-render/client` | `<tr>` Header row and column not supported      |
 | Table of contents  | ❌ Missing             |                        |                         |                                                 |
 | Template           | ❌ Deprecated          |                        |                         |                                                 |
-| To do              | 🔶 Not fully supported |                        | `@notion-render/client` | `<li>` Not currently wrapped between `<ul>`     |
+| To do              | ✅ Yes                 |                        | `@notion-render/client` | `<ul><li>`                                      |
 | Toggle             | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details>`                                     |
 | Video              | ❌ Missing             |                        |                         |                                                 |
 
