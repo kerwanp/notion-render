@@ -46,7 +46,7 @@ $ yarn add @notion-render/client
 
 ```typescript
 import { Client } from '@notionhq/notion';
-import { NotionRenderer } from '@kerwanp/notion-render';
+import { NotionRenderer } from '@notion-render/client';
 
 const client = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -77,7 +77,7 @@ const html = renderer.render(...results);
 | Text               | ✅ Yes                 |                        | `@notion-render/client` | `<span>`                                        |
 | Bookmark           | ❌ Missing             |                        |                         |                                                 |
 | Breadcrumb         | ❌ Missing             |                        |                         | Embedded preview of external URL                |
-| Bulleted List Item | 🔶 Not fully supported |                        | `@notion-render/client` | `<li>` Not currently wrapped between `<ul>`     |
+| Bulleted List Item | ✅ Yes                 |                        | `@notion-render/client` | `<ul><li>`                                      |
 | Callout            | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |
 | Child database     | ❌ Missing             |                        |                         |                                                 |
 | Child page         | ❌ Missing             |                        |                         |                                                 |
@@ -97,7 +97,7 @@ const html = renderer.render(...results);
 | Image              | ✅ Yes                 |                        | `@notion-render/client` | `<fig><img>`                                    |
 | Link preview       | ❌ Missing             |                        |                         |                                                 |
 | Mention            | ❌ Missing             |                        |                         |                                                 |
-| Numbered List Item | 🔶 Not fully supported |                        |                         | `<li>` Not currently wrapped between `<ol>`     |
+| Numbered List Item | ✅ Yes                 |                        |                         | `<ol><li>`                                      |
 | Paragraph          | ✅ Yes                 |                        | `@notion-render/client` | `<p>`                                           |
 | PDF                | ❌ Missing             |                        |                         |                                                 |
 | Quote              | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |

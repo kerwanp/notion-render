@@ -1,12 +1,19 @@
-import { BLOCK_RENDERERS } from './globals';
-import { Block, BlockRenderer, BlockRendererFunc } from './types';
+import { BLOCK_RENDERERS, EXTENSIONS } from './globals';
+import {
+  Block,
+  BlockRenderer,
+  BlockRendererFunc,
+  ExtensionFunc,
+} from './types';
 import { Client } from '@notionhq/client';
 
 export type NotionRendererArgs = {
   /**
    * List of custom renderers.
    */
-  renderers?: [BlockRenderer<any>];
+  renderers?: BlockRenderer<any>[];
+
+  extensions?: ExtensionFunc[];
 
   /**
    * NotionClient used to query block children.
@@ -17,11 +24,16 @@ export type NotionRendererArgs = {
 
 export class NotionRenderer {
   private renderers: Record<string, BlockRendererFunc<any>> = {};
+  private extensions: ExtensionFunc[] = [];
   public readonly client?: Client;
 
   constructor(args: NotionRendererArgs = {}) {
-    [...BLOCK_RENDERERS, ...(args.renderers ?? [])].map((Block) =>
+    [...BLOCK_RENDERERS, ...(args.renderers ?? [])].forEach((Block) =>
       this.addBlockRenderer(Block)
+    );
+
+    [...EXTENSIONS, ...(args.extensions ?? [])].forEach((extension) =>
+      this.addExtension(extension)
     );
 
     this.client = args.client;
@@ -31,7 +43,15 @@ export class NotionRenderer {
     this.renderers[renderer.type] = renderer;
   }
 
+  public addExtension(extension: ExtensionFunc): void {
+    this.extensions.push(extension);
+  }
+
   public async render(...blocks: Block[]): Promise<string> {
+    for (const extension of this.extensions) {
+      blocks = await extension(blocks);
+    }
+
     const promises = blocks
       .map((block) => {
         const renderer = this.renderers[block.type];

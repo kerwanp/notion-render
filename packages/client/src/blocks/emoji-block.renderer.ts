@@ -7,5 +7,5 @@ type EmojiBlock = {
 
 export default createBlockRenderer<EmojiBlock>(
   'emoji',
-  async (data) => data.emoji
+  async (data) => `<span class="notion-${data.type}">${data.emoji}</span>`
 );
