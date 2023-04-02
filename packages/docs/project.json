@@ -11,19 +11,33 @@
         "cwd": "packages/docs"
       }
     },
-    "build": {
+    "contentlayer-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "contentlayer build",
+        "cwd": "packages/docs"
+      }
+    },
+    "next-build": {
       "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "root": "packages/docs",
-        "outputPath": "dist/packages/docs"
+        "outputPath": "packages/docs/dist"
       },
       "configurations": {
         "development": {
           "outputPath": "packages/docs"
         },
         "production": {}
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx contentlayer-build docs", "nx next-build docs"],
+        "parallel": false
       }
     },
     "serve": {

@@ -11,15 +11,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "types": ["jest", "node"],
+    "types": [
+      "jest",
+      "node"
+    ],
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@notion-render/client": ["packages/client/src/index.ts"],
-      "@contentlayer/generated": ["packages/docs/.contentlayer/generated"]
+      "@notion-render/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@contentlayer/generated": [
+        "packages/docs/.contentlayer/generated"
+      ]
     }
   },
   "include": [
@@ -29,7 +36,9 @@
     "**/*.jsx",
     "next-env.d.ts",
     "../../packages/docs/.next/types/**/*.ts",
-    "./.contentlayer/generated"
+    "./.contentlayer/generated",
+    "../../dist/packages/docs/.next/types/**/*.ts",
+    "../../packages/docs/dist/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
