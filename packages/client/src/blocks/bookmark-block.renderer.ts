@@ -20,6 +20,7 @@ export default createBlockRenderer<BookmarkBlockObjectResponse>(
     const image =
       $('meta[property="og:image"]').attr('content') ||
       $('meta[property="og:image:url"]').attr('content');
+    const website = new URL(data.bookmark.url).origin;
 
     return `
         <a href="${data.bookmark.url}" target="_blank" class="notion-${data.type}" data-url="${data.bookmark.url}">
@@ -31,7 +32,7 @@ export default createBlockRenderer<BookmarkBlockObjectResponse>(
                     ${description}
                 </p>
                 <div class="bookmark-footer">
-                    <img class="bookmark-logo" src="${icon}" />
+                    <img class="bookmark-logo" src="${website}${icon}" />
                     <div class="bookmark-url">${data.bookmark.url}</div>
                 </div>
             </div>

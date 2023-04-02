@@ -1,0 +1,33 @@
+@use '../mixins/colors';
+
+details.notion-toggle {
+  @include colors.background-color;
+  @include colors.foreground-color;
+
+  &[open] {
+    &::before {
+      transform: rotate(0deg);
+    }
+  }
+
+  summary {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+
+    &::before {
+      content: '';
+      transform: rotate(-90deg);
+      width: 0.6875rem;
+      height: 0.6875rem;
+      margin: 11px;
+      box-shadow: inset 1em 1em black;
+      clip-path: polygon(100% 0%, 5% 0%, 50% 100%);
+    }
+  }
+
+  p {
+    padding-left: 33px;
+  }
+}

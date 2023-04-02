@@ -1,0 +1,16 @@
+@use '../mixins/colors';
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  li {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 12px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+
+    @include colors.background-color;
+    @include colors.foreground-color;
+  }
+}

@@ -1,0 +1,13 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  tr td {
+    border: 1px solid rgb(233, 233, 231);
+    min-width: 120px;
+    max-width: 240px;
+    min-height: 32px;
+    vertical-align: top;
+    padding: 7px 9px;
+    color: rgb(55, 53, 47);
+  }
+}

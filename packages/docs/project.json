@@ -51,16 +51,16 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "docs:build",
+        "buildTarget": "docs:next-build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "docs:build:development",
+          "buildTarget": "docs:next-build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "docs:build:production",
+          "buildTarget": "docs:next-build:production",
           "dev": false
         }
       }

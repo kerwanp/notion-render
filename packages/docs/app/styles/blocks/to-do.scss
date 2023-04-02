@@ -21,6 +21,7 @@ ul.notion-to_do_list {
       appearance: none;
       display: grid;
       place-content: center;
+      pointer-events: none;
 
       &:checked {
         background-color: rgb(35, 131, 226);

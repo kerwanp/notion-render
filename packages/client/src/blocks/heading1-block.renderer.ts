@@ -19,7 +19,9 @@ export default createBlockRenderer<Heading1BlockObjectResponse>(
       data.heading_1.is_toggleable
     ) {
       result = `
-                <details class="notion-toggle-${data.type}">
+                <details class="notion-toggle-${data.type} notion-color-${
+        data.heading_1.color
+      }">
                     <summary>${result}</summary>
                     ${await renderer.renderBlock(data.id)}
                 </details>

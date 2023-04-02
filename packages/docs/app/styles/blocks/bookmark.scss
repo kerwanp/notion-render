@@ -1,0 +1,65 @@
+a.notion-bookmark {
+  display: flex;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  border-radius: 3px;
+  flex-wrap: wrap-reverse;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+
+  .bookmark-info {
+    flex: 4 1 180px;
+    padding: 12px 14px 14px;
+    overflow: hidden;
+
+    .bookmark-title {
+      font-size: 14px;
+      margin-bottom: 2px;
+      min-height: 24px;
+      line-height: 20px;
+      color: rgb(55, 53, 47);
+      overflow: hidden;
+    }
+
+    .bookmark-description {
+      font-size: 12px;
+      line-height: 16px;
+      color: rgba(55, 53, 47, 0.65);
+      height: 32px;
+      overflow: hidden;
+    }
+  }
+
+  .bookmark-footer {
+    display: flex;
+    margin-top: 12px;
+
+    .bookmark-logo {
+      min-width: 16px;
+      margin-right: 6px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .bookmark-url {
+      font-size: 12px;
+      line-height: 16px;
+      color: rgb(55, 53, 47);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .bookmark-thumbnail {
+    display: block;
+    flex: 1 1 180px;
+    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -5,12 +5,14 @@ export default createBlockRenderer<TableRowBlockObjectResponse>(
   'table_row',
   async (data, renderer) => {
     return `
-            <tr>
+            <tr class="notion-${data.type}">
                 ${(
                   await Promise.all(
                     data.table_row.cells.map(
                       async (cell) =>
-                        `<td>${await renderer.render(...cell)}</td>`
+                        `<td class="notion-table_cell">${await renderer.render(
+                          ...cell
+                        )}</td>`
                     )
                   )
                 ).join('')}

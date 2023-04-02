@@ -5,7 +5,7 @@ export default createBlockRenderer<TableBlockObjectResponse>(
   'table',
   async (data, renderer) => {
     return `
-            <table>
+            <table class="notion-${data.type}">
                 ${await renderer.renderBlock(data.id)}
             </table>
         `;
