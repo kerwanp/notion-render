@@ -7,7 +7,7 @@
   },
   "scripts": {
     "vercel-build": "next build",
-    "prepare": "is-ci || husky install"
+    "prepare": "npx is-ci || npx husky install"
   },
   "config": {
     "commitizen": {
