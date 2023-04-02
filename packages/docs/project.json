@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/docs",
   "projectType": "application",
+  "implicitDependencies": ["client"],
   "targets": {
     "contentlayer-serve": {
       "executor": "nx:run-commands",

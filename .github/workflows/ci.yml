@@ -102,7 +102,7 @@ jobs:
           npx nx format:check
           npx nx affected --target lint --parallel 3
           npx nx affected --target test --parallel 3 --ci --code-coverage
-          npx nx affected --target build --parallel 3
+          npx nx affected --target build --parallel --exclude docs 3
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       - name: Release
