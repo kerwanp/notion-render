@@ -5,10 +5,14 @@ export default createBlockRenderer<CalloutBlockObjectResponse>(
   'callout',
   async (data, renderer) => {
     return `
-            <blockquote class="notion-${data.type} notion-color-${data.callout.color
-      }">
+            <blockquote class="notion-${data.type} notion-color-${
+      data.callout.color
+    }">
                 <div class="icon">
-                ${data.callout.icon && (await renderer.render(data.callout.icon))}
+                ${
+                  data.callout.icon &&
+                  (await renderer.render(data.callout.icon))
+                }
                 </div> 
                 <div class="content">
                   ${await renderer.render(...data.callout.rich_text)}
