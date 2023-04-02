@@ -93,6 +93,13 @@
       "options": {
         "lintFilePatterns": ["packages/docs/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["vercel build", "vercel deploy --prebuilt"],
+        "parallel": false
+      }
     }
   },
   "tags": []
