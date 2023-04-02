@@ -6,6 +6,7 @@ import {
   ExtensionFunc,
 } from './types';
 import { Client } from '@notionhq/client';
+import { Plugin } from './plugin';
 
 export type NotionRendererArgs = {
   /**
@@ -13,6 +14,9 @@ export type NotionRendererArgs = {
    */
   renderers?: BlockRenderer<any>[];
 
+  /**
+   * List of extensions to improve existing blocks.
+   */
   extensions?: ExtensionFunc[];
 
   /**
@@ -75,5 +79,12 @@ export class NotionRenderer {
       block_id: blockId,
     });
     return this.render(...(results as Block[]));
+  }
+
+  public async use(...plugins: ReturnType<Plugin>[]) {
+    plugins.forEach((plugin) => {
+      plugin.renderers.forEach((renderer) => this.addBlockRenderer(renderer));
+      plugin.extensions.forEach((extension) => this.addExtension(extension));
+    });
   }
 }

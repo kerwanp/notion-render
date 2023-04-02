@@ -1,0 +1,30 @@
+{
+  "name": "hljs-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/hljs-plugin/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/hljs-plugin"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/hljs-plugin/**/*.ts"]
+      }
+    },
+    "release": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx semantic-release-plus --extends ./packages/hljs-plugin/release.config.js"
+      }
+    }
+  },
+  "tags": []
+}

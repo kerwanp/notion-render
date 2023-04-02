@@ -16,12 +16,7 @@
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@notion-render/client/sass/*": ["packages/client/sass/*"],
-      "@notion-render/client": ["packages/client/src/index.ts"],
-      "@contentlayer/generated": ["packages/docs/.contentlayer/generated"]
-    }
+    ]
   },
   "include": [
     "**/*.ts",

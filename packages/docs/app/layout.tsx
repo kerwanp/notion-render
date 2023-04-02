@@ -1,10 +1,8 @@
-import { allBlocks, allGuides } from '@contentlayer/generated';
+import { allBlocks, allGuides, allPlugins } from '@contentlayer/generated';
 import Navbar from './Navbar';
-import { HljsProvider } from './providers/hljs.provider';
 import Sidebar, { NavbarArgs } from './Sidebar';
 
 import './styles.scss';
-import '@notion-render/client/sass/theme.scss';
 
 export default function RootLayout({
   children,
@@ -16,6 +14,10 @@ export default function RootLayout({
   );
 
   const guides = allGuides.sort((a, b) => (a.order > b.order ? 1 : -1));
+
+  const plugins = allPlugins.sort((a, b) =>
+    a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+  );
 
   const items: NavbarArgs['items'] = [
     {
@@ -34,19 +36,25 @@ export default function RootLayout({
         slug: `/blocks/${block.slug}`,
       })),
     },
+    {
+      name: 'Plugins',
+      slug: '/plugins',
+      items: plugins.map((plugin) => ({
+        name: plugin.name,
+        slug: `/plugins/${plugin.slug}`,
+      })),
+    },
   ];
 
   return (
     <html>
       <head />
       <body className="">
-        <HljsProvider>
-          <Navbar />
-          <div className="container mx-auto flex justify-center gap-6">
-            <Sidebar items={items} />
-            <div className="flex-1 max-w-[700px]">{children}</div>
-          </div>
-        </HljsProvider>
+        <Navbar />
+        <div className="container mx-auto flex justify-center gap-6">
+          <Sidebar items={items} />
+          <div className="flex-1 max-w-[700px]">{children}</div>
+        </div>
       </body>
     </html>
   );

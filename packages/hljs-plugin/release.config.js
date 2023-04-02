@@ -1,4 +1,4 @@
-const name = 'client';
+const name = 'hljs-plugin';
 const srcRoot = `packages/${name}`;
 
 module.exports = {

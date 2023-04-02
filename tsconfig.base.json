@@ -13,7 +13,13 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@contentlayer/generated": ["packages/docs/.contentlayer/generated"],
+      "@notion-render/client": ["packages/client/src/index.ts"],
+      "@notion-render/client/sass/*": ["packages/client/sass/*"],
+      "@notion-render/hljs-plugin": ["packages/hljs-plugin/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

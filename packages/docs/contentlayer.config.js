@@ -1,8 +1,16 @@
 import { defineDatabase, makeSource } from 'contentlayer-source-notion';
 import oSlugify from 'slugify';
+import hljs from '@notion-render/hljs-plugin';
+import { NotionRenderer } from '@notion-render/client';
+import { Client } from '@notionhq/client';
 
 const slugify = (value) =>
   oSlugify(value, { remove: /[*+~.()'#?/"!:@]/g, lower: true });
+
+const client = new Client({ auth: process.env.NOTION_TOKEN });
+const renderer = new NotionRenderer({ client });
+
+renderer.use(hljs());
 
 export const Guide = defineDatabase(() => ({
   name: 'Guide',
@@ -38,9 +46,25 @@ export const Block = defineDatabase(() => ({
   },
 }));
 
-export default makeSource({
-  client: {
-    auth: process.env.NOTION_TOKEN,
+export const Plugin = defineDatabase(() => ({
+  name: 'Plugin',
+  databaseId: 'f9d9f194bb4e4d068c8a5ede8965540d',
+  properties: [
+    {
+      name: 'Name',
+      required: true,
+    },
+  ],
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (d) => slugify(d.name),
+    },
   },
-  databaseTypes: [Block, Guide],
+}));
+
+export default makeSource({
+  client,
+  renderer,
+  databaseTypes: [Block, Guide, Plugin],
 });
