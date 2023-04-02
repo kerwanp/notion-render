@@ -13,11 +13,7 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@notion-render/client": ["packages/client/src/index.ts"],
-      "@contentlayer/generated": ["packages/docs/.contentlayer/generated"]
-    }
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "tmp"]
 }
