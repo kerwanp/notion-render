@@ -1,5 +1,9 @@
 {
   "scripts": {
     "vercel-build": "next build"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1"
   }
 }
