@@ -7,6 +7,9 @@ on:
 
 env:
   HUSKY: 0
+  NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
   main:
@@ -103,14 +106,11 @@ jobs:
           npx nx affected --target lint --parallel 3
           npx nx affected --target test --parallel 3 --ci --code-coverage
           npx nx affected --target build --parallel 3 --exclude docs
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       - name: Release & Deploy
         if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: |
           npx nx affected --target release --all --parallel=1
-          npx nx affected --target deploy --all --parallel=1
+          npx nx affected --target deploy --all --parallel=1 --token=${{ secrets.VERCEL_TOKEN }}

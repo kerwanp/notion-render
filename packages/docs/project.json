@@ -77,7 +77,11 @@
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["vercel build", "vercel deploy --prebuilt"],
+        "commands": [
+          "vercel pull --yes",
+          "vercel build",
+          "vercel deploy --prebuilt"
+        ],
         "parallel": false
       }
     }
