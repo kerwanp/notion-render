@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@notion-render/client": ["packages/client/src/index.ts"]
+      "@notion-render/client": ["packages/client/src/index.ts"],
+      "contentlayer/generated": ["packages/docs/.contentlayer/generated"]
     }
   },
   "exclude": ["node_modules", "tmp"]

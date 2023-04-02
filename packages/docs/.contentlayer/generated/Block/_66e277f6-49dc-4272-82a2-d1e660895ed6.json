@@ -1,0 +1,15 @@
+{
+  "parameters": [],
+  "description": "A divider is a simple block to split content of your page.",
+  "requireClient": false,
+  "blockType": "divider",
+  "notionReference": "https://developers.notion.com/reference/block#divider",
+  "name": "Divider",
+  "type": "Block",
+  "_id": "66e277f6-49dc-4272-82a2-d1e660895ed6",
+  "_raw": {},
+  "body": {
+    "html": "\n            <p>\n                \n            </p>\n        "
+  },
+  "slug": "divider"
+}

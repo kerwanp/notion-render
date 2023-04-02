@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.js"],
+  "sourcesContent": ["import { defineDatabase, makeSource } from 'contentlayer-source-notion';\n\nexport const Block = defineDatabase(() => ({\n  name: 'Block',\n  databaseId: '25bc244c88b3467ba01a35b4b18b4426',\n}));\n\nexport default makeSource({\n  client: {\n    auth: process.env.NOTION_TOKEN,\n  },\n  databaseTypes: [Block],\n});\n"],
+  "mappings": ";AAAA,SAAS,gBAAgB,kBAAkB;AAEpC,IAAM,QAAQ,eAAe,OAAO;AAAA,EACzC,MAAM;AAAA,EACN,YAAY;AACd,EAAE;AAEF,IAAO,8BAAQ,WAAW;AAAA,EACxB,QAAQ;AAAA,IACN,MAAM,QAAQ,IAAI;AAAA,EACpB;AAAA,EACA,eAAe,CAAC,KAAK;AACvB,CAAC;",
+  "names": []
+}

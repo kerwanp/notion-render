@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Rich Text",
+    "Color"
+  ],
+  "description": "A bulleted list is a list of items prefixed with a bullet point.",
+  "requireClient": false,
+  "blockType": "bulleted_list",
+  "notionReference": "https://developers.notion.com/reference/block#bulleted-list-item",
+  "name": "Bulleted List",
+  "type": "Block",
+  "_id": "3ec98dff-eafb-4c05-a92d-18440d72ca11",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "bulleted-list"
+}

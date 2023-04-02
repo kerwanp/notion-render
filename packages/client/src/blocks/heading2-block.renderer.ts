@@ -5,7 +5,9 @@ export default createBlockRenderer<Heading2BlockObjectResponse>(
   'heading_2',
   async (data, renderer) => {
     let result = `
-            <h2 class="notion-${data.type} notion-color-${data.type}">
+            <h2 class="notion-${data.type} notion-color-${
+      data.heading_2.color
+    }">
                 ${await renderer.render(...data.heading_2.rich_text)}
             </h2>
         `;

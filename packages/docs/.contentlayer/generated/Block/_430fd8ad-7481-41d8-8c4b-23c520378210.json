@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "File",
+    "Caption"
+  ],
+  "description": "An image contains an image file (supported: bmp, gif, heic, jpeg, jpg, png, svg, tif, tiff) and can also have a caption.",
+  "requireClient": false,
+  "blockType": "image",
+  "notionReference": "https://developers.notion.com/reference/block#image",
+  "name": "Image",
+  "type": "Block",
+  "_id": "430fd8ad-7481-41d8-8c4b-23c520378210",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "image"
+}

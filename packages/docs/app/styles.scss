@@ -1,0 +1,10 @@
+@use './styles/blocks';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  position: relative;
+}

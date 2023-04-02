@@ -1,0 +1,17 @@
+{
+  "parameters": [
+    "Children"
+  ],
+  "description": "Columns are made to split the width of your page in multiple parts.",
+  "requireClient": true,
+  "blockType": "column",
+  "notionReference": "https://developers.notion.com/reference/block#column-list-and-column",
+  "name": "Columns",
+  "type": "Block",
+  "_id": "302c3119-8a11-4b46-8b62-dc972ee3c57e",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "columns"
+}

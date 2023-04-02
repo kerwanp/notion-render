@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Caption",
+    "Url"
+  ],
+  "description": "A bookmark is a block showing metadata of the specified URL.",
+  "requireClient": false,
+  "blockType": "bookmark",
+  "notionReference": "https://developers.notion.com/reference/block#bookmark",
+  "name": "Bookmark",
+  "type": "Block",
+  "_id": "e193e5ff-d12b-4bf7-9ff3-63599c35c599",
+  "_raw": {},
+  "body": {
+    "html": "\n            <div class=\"notion-code\">\n                <pre><code class=\"language-html\">&#60;a href=\"https://example.org/\" target=\"_blank\" class=\"notion-bookmark\" data-url=\"https://syneki.com/en\"&#62;\n\t&#60;div class=\"bookmark-info\"&#62;\n\t\t&#60;div class=\"bookmark-title\"&#62;\n\t\t\tSyneki | Cloud &#38; DevOps Agency\n\t\t&#60;/div&#62;\n\t\t&#60;p class=\"bookmark-description\"&#62;\n\t\t\tImpetu eosque ultimam in mortuorum artuum membrorum ampla abiecerunt impetu artuum conpage\n\t\t&#60;/p&#62;\n\t\t&#60;div class=\"bookmark-footer\"&#62;\n\t\t\t&#60;img class=\"bookmark-icon\" src=\"https://syneki.com/favicon.ico\" /&#62;\n\t\t\t&#60;div class=\"bookmark-url\"&#62;https://syneki.com/en&#60;/div&#62;\n\t\t&#60;/div&#62;\n\t&#60;/div&#62;\n\t&#60;div class=\"bookmark-thumbnail\"&#62;\n\t\t&#60;img src=\"https://syneki.com/banner.png\" /&#62;\n\t&#60;/div&#62;\n&#60;/a&#62;</code></pre>\n                <legend></legend>\n            </div>\n        \n            <hr class=\"notion-divider\" />\n        \n        <a href=\"https://syneki.com/en\" target=\"_blank\" class=\"notion-bookmark\" data-url=\"https://syneki.com/en\">\n            <div class=\"bookmark-info\">\n                <div class=\"bookmark-title\">\n                    Syneki | Agence Cloud & DevOps\n                </div>\n                <p class=\"bookmark-description\">\n                    Syneki est un agence DevOps & Cloud. \nNous construisons des infrastructures Cloud \"next-generation\".\n                </p>\n                <div class=\"bookmark-url\">\n                    <div class=\"bookmark-logo\">\n                        <img src=\"/favicon.svg\" />\n                    </div>\n                </div>\n            </div>\n            <div class=\"bookmark-thumbnail\">\n                <img src=\"https://a.storyblok.com/f/192697/1920x1080/bd7468c3ec/meta-image.png\" />\n            </div>\n        </a>\n    "
+  },
+  "slug": "bookmark"
+}

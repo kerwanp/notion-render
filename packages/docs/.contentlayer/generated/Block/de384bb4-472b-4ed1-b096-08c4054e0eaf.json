@@ -1,0 +1,17 @@
+{
+  "parameters": [
+    "Emoji"
+  ],
+  "description": "",
+  "requireClient": false,
+  "blockType": "emoji",
+  "notionReference": "https://developers.notion.com/reference/emoji-object",
+  "name": "Emoji",
+  "type": "Block",
+  "_id": "de384bb4-472b-4ed1-b096-08c4054e0eaf",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "emoji"
+}

@@ -1,0 +1,19 @@
+{
+  "parameters": [
+    "Icon",
+    "Rich Text",
+    "Color"
+  ],
+  "description": "A callout is a block that contain rich text prefixed with an Emoji.",
+  "requireClient": false,
+  "blockType": "callout",
+  "notionReference": "https://developers.notion.com/reference/block#callout",
+  "name": "Callout",
+  "type": "Block",
+  "_id": "85992713-8782-42ac-b346-7ff734ce3155",
+  "_raw": {},
+  "body": {
+    "html": "\n            <div class=\"notion-code\">\n                <pre><code class=\"language-html\">&#60;blockquote class=\"notion-callout notion-color-blue_background\"&#62;\n  &#60;div class=\"icon\"&#62;\n  &#60;span class=\"notion-emoji\"&#62;&#8505;️&#60;/span&#62;\n  &#60;/div&#62; \n  &#60;div class=\"content\"&#62;\n    Phoenice Libano monti gratiarum excellit Emissa adclinis adclinis et Sidon pulchris magnis plena celebritateque excellit condita hanc Tyros celebritateque Phoenice.\n  &#60;/div&#62;\n&#60;/blockquote&#62;\n\n&#60;blockquote class=\"notion-callout notion-color-red_background\"&#62;\n  &#60;div class=\"icon\"&#62;\n  &#60;span class=\"notion-emoji\"&#62;🚫&#60;/span&#62;\n  &#60;/div&#62; \n  &#60;div class=\"content\"&#62;\n    Ludicium Scipionem amicitia essent adhibere in dicere cuius Sunt igitur adhibere est posse illis neglegentis querebatur amicitia est nec constantes.\n  &#60;/div&#62;\n&#60;/blockquote&#62;\n\n&#60;blockquote class=\"notion-callout notion-color-yellow_background\"&#62;\n  &#60;div class=\"icon\"&#62;\n  &#60;san class=\"notion-emoji\"&#62;&#9888;️&#60;/span&#62;\n  &#60;/div&#62; \n  &#60;div class=\"content\"&#62;\n    Valeant oculis acerbitates famulos domum missos purgaverint quem capite professio sospitale missos medendi validum excogitatum paucis adminiculum capite amicum nequi.\n  &#60;/div&#62;\n&#60;/blockquote&#62;\n</code></pre>\n                <legend></legend>\n            </div>\n        \n            <p>\n                \n            </p>\n        \n            <hr class=\"notion-divider\" />\n        \n            <p>\n                \n            </p>\n        \n            <blockquote class=\"notion-callout notion-color-blue_background\">\n                <div class=\"icon\">\n                <span class=\"notion-emoji\">ℹ️</span>\n                </div> \n                <div class=\"content\">\n                  Phoenice Libano monti gratiarum excellit Emissa adclinis adclinis et Sidon pulchris magnis plena celebritateque excellit condita hanc Tyros celebritateque Phoenice.\n                </div>\n            </blockquote>\n        \n            <blockquote class=\"notion-callout notion-color-red_background\">\n                <div class=\"icon\">\n                <span class=\"notion-emoji\">🚫</span>\n                </div> \n                <div class=\"content\">\n                  Ludicium Scipionem amicitia essent adhibere in dicere cuius Sunt igitur adhibere est posse illis neglegentis querebatur amicitia est nec constantes.\n                </div>\n            </blockquote>\n        \n            <blockquote class=\"notion-callout notion-color-pink_background\">\n                <div class=\"icon\">\n                <span class=\"notion-emoji\">⚠️</span>\n                </div> \n                <div class=\"content\">\n                  Valeant oculis acerbitates famulos domum missos purgaverint quem capite professio sospitale missos medendi validum excogitatum paucis adminiculum capite amicum nequi.\n                </div>\n            </blockquote>\n        \n            <p>\n                \n            </p>\n        "
+  },
+  "slug": "callout"
+}

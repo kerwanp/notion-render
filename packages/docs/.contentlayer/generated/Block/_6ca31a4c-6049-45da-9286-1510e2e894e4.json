@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Rich Text",
+    "Color"
+  ],
+  "description": "A numbered list is a list of items prefixed with their index.",
+  "requireClient": false,
+  "blockType": "numbered_list",
+  "notionReference": "https://developers.notion.com/reference/block#numbered-list-item",
+  "name": "Numbered List",
+  "type": "Block",
+  "_id": "6ca31a4c-6049-45da-9286-1510e2e894e4",
+  "_raw": {},
+  "body": {
+    "html": "<ol class=\"notion-numbered_list\">\n            <li class=\"notion-numbered_list_item notion-color-default\">\n                This is a numbered list\n            </li>\n        \n            <li class=\"notion-numbered_list_item notion-color-default\">\n                You can have multiple items\n            </li>\n        \n            <li class=\"notion-numbered_list_item notion-color-default\">\n                And they are all wrapped betwe\n            </li>\n        </ol>"
+  },
+  "slug": "numbered-list"
+}

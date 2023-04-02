@@ -1,0 +1,49 @@
+{
+  "cacheItemsMap": {
+    "3ec98dff-eafb-4c05-a92d-18440d72ca11": {
+      "document": {
+        "tags": [],
+        "name": "Hello",
+        "type": "Block",
+        "_id": "3ec98dff-eafb-4c05-a92d-18440d72ca11",
+        "_raw": {},
+        "body": {
+          "html": ""
+        }
+      },
+      "documentHash": "1680397140000",
+      "hasWarnings": false,
+      "documentTypeName": "Block"
+    },
+    "6ca31a4c-6049-45da-9286-1510e2e894e4": {
+      "document": {
+        "tags": [],
+        "name": "Test",
+        "type": "Block",
+        "_id": "6ca31a4c-6049-45da-9286-1510e2e894e4",
+        "_raw": {},
+        "body": {
+          "html": ""
+        }
+      },
+      "documentHash": "1680397140000",
+      "hasWarnings": false,
+      "documentTypeName": "Block"
+    },
+    "bb7793dd-3fde-4644-98ac-869886524f6c": {
+      "document": {
+        "tags": [],
+        "name": "Database",
+        "type": "Block",
+        "_id": "bb7793dd-3fde-4644-98ac-869886524f6c",
+        "_raw": {},
+        "body": {
+          "html": "\n            <p>\n                Testest\n            </p>\n        "
+        }
+      },
+      "documentHash": "1680397140000",
+      "hasWarnings": false,
+      "documentTypeName": "Block"
+    }
+  }
+}

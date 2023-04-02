@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Rich Text",
+    "Color"
+  ],
+  "description": "Toggle Headings are blocks that you can expand. When not extended, only the heading is shown.",
+  "requireClient": true,
+  "blockType": "heading_x",
+  "notionReference": "https://developers.notion.com/reference/block#headings",
+  "name": "Toggle Headings",
+  "type": "Block",
+  "_id": "f2017935-4677-49ba-8c29-5173dd05a42d",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "toggle-headings"
+}

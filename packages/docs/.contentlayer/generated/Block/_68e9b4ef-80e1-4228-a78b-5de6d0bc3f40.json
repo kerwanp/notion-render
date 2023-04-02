@@ -1,0 +1,19 @@
+{
+  "parameters": [
+    "Caption",
+    "Rich Text",
+    "Language"
+  ],
+  "description": "A code block contains some code and its language.",
+  "requireClient": false,
+  "blockType": "code",
+  "notionReference": "https://developers.notion.com/reference/block#code",
+  "name": "Code",
+  "type": "Block",
+  "_id": "68e9b4ef-80e1-4228-a78b-5de6d0bc3f40",
+  "_raw": {},
+  "body": {
+    "html": ""
+  },
+  "slug": "code"
+}

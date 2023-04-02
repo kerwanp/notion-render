@@ -1,0 +1,13 @@
+{
+  "requireClient": false,
+  "blockType": "heading_2",
+  "notionReference": "https://developers.notion.com/reference/block#headings",
+  "name": "Heading 2",
+  "type": "Block",
+  "_id": "0224221c-f019-4131-abd9-a5e190ab1d18",
+  "_raw": {},
+  "body": {
+    "html": "\n            <h2 class=\"notion-heading_2 notion-color-heading_2\">\n                An example of Heading 2\n            </h2>\n        "
+  },
+  "slug": "heading-2"
+}

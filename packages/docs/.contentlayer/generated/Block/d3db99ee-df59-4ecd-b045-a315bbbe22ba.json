@@ -1,0 +1,13 @@
+{
+  "requireClient": false,
+  "blockType": "heading_3",
+  "notionReference": "https://developers.notion.com/reference/block#headings",
+  "name": "Heading 3",
+  "type": "Block",
+  "_id": "d3db99ee-df59-4ecd-b045-a315bbbe22ba",
+  "_raw": {},
+  "body": {
+    "html": "\n            <h3 class=\"notion-heading_3 notion-color-heading_3\">\n                An example of Heading 3\n            </h3>\n        "
+  },
+  "slug": "heading-3"
+}

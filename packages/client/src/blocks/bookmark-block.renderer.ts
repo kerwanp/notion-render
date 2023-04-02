@@ -1,31 +1,42 @@
 import { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { createBlockRenderer } from '../utils/create-block-renderer';
-import * as urlMetadata from 'url-metadata';
+import * as cheerio from 'cheerio';
 
 export default createBlockRenderer<BookmarkBlockObjectResponse>(
   'bookmark',
   async (data) => {
-    const metadata = (await urlMetadata(
-      data.bookmark.url
-    )) as urlMetadata.Result & Record<string, any>;
+    const html = await fetch(data.bookmark.url).then((result) => result.text());
+    const $ = cheerio.load(html);
+    const title =
+      $('meta[property="og:title"]').attr('content') ||
+      $('title').text() ||
+      $('meta[name="title"]').attr('content');
+    const description =
+      $('meta[property="og:description"]').attr('content') ||
+      $('meta[name="description"]').attr('content');
+    const icon =
+      $('link[rel="icon"]').attr('href') ||
+      $('link[rel="shortcut icon"]').attr('href');
+    const image =
+      $('meta[property="og:image"]').attr('content') ||
+      $('meta[property="og:image:url"]').attr('content');
 
     return `
-        <a href="${metadata.url}" target="_blank" class="notion-${data.type}" data-url="${data.bookmark.url}">
+        <a href="${data.bookmark.url}" target="_blank" class="notion-${data.type}" data-url="${data.bookmark.url}">
             <div class="bookmark-info">
                 <div class="bookmark-title">
-                    ${metadata.title}
+                    ${title}
                 </div>
                 <p class="bookmark-description">
-                    ${metadata.description}
+                    ${description}
                 </p>
-                <div class="bookmark-url">
-                    <div class="bookmark-logo">
-                        <img src="https://${metadata.source}${metadata['msapplication-TileImage']}" />
-                    </div>
+                <div class="bookmark-footer">
+                    <img class="bookmark-logo" src="${icon}" />
+                    <div class="bookmark-url">${data.bookmark.url}</div>
                 </div>
             </div>
             <div class="bookmark-thumbnail">
-                <img src="${metadata.image}" />
+                <img src="${image}" />
             </div>
         </a>
     `;

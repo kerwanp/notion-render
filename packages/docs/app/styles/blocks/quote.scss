@@ -1,0 +1,11 @@
+@use '../mixins/colors';
+
+blockquote.notion-quote {
+  margin: 7px 2px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-left: 3px solid currentcolor;
+
+  @include colors.background-color;
+  @include colors.foreground-color;
+}

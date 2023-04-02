@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Rich Text",
+    "Color"
+  ],
+  "description": "Headings are the titles of your page. Notion only provide h1, h2 and h3.",
+  "requireClient": false,
+  "blockType": "heading_x",
+  "notionReference": "https://developers.notion.com/reference/block#headings",
+  "name": "Headings",
+  "type": "Block",
+  "_id": "bb7793dd-3fde-4644-98ac-869886524f6c",
+  "_raw": {},
+  "body": {
+    "html": "\n            <div class=\"notion-code\">\n                <pre><code class=\"language-typescript\">&#60;h1 class=\"notion-heading1 notion-color-default\"&#62;\n\tHeading 1\n&#60;/h1&#62;\n&#60;h2 class=\"notion-heading2 notion-color-default\"&#62;\n\tHeading 2\n&#60;/h1&#62;\n&#60;h1 class=\"notion-heading3 notion-color-default\"&#62;\n\tHeading 3\n&#60;/h1&#62;</code></pre>\n                <legend></legend>\n            </div>\n        \n            <p>\n                \n            </p>\n        \n            <hr class=\"notion-divider\" />\n        \n            <h1 class=\"notion-heading_1 notion-color-default\">\n                Heading 1\n            </h1>\n        \n            <h2 class=\"notion-heading_2 notion-color-default\">\n                Heading 2\n            </h2>\n        \n            <h3 class=\"notion-heading_3 notion-color-default\">\n                Heading 3\n            </h3>\n        "
+  },
+  "slug": "headings"
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.js"],
+  "sourcesContent": ["import { defineDatabase, makeSource } from 'contentlayer-source-notion';\nimport oSlugify from 'slugify';\n\nconst slugify = (value) =>\n  oSlugify(value, { remove: /[*+~.()'#?/\"!:@]/g, lower: true });\n\nexport const Block = defineDatabase(() => ({\n  name: 'Block',\n  databaseId: '25bc244c88b3467ba01a35b4b18b4426',\n  properties: [\n    {\n      name: 'Name',\n      required: true,\n    },\n  ],\n  computedFields: {\n    slug: {\n      type: 'string',\n      resolve: (d) => slugify(d.name),\n    },\n  },\n}));\n\nexport default makeSource({\n  client: {\n    auth: process.env.NOTION_TOKEN,\n  },\n  databaseTypes: [Block],\n});\n"],
+  "mappings": ";AAAA,SAAS,gBAAgB,kBAAkB;AAC3C,OAAO,cAAc;AAErB,IAAM,UAAU,CAAC,UACf,SAAS,OAAO,EAAE,QAAQ,qBAAqB,OAAO,KAAK,CAAC;AAEvD,IAAM,QAAQ,eAAe,OAAO;AAAA,EACzC,MAAM;AAAA,EACN,YAAY;AAAA,EACZ,YAAY;AAAA,IACV;AAAA,MACE,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACA,gBAAgB;AAAA,IACd,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,SAAS,CAAC,MAAM,QAAQ,EAAE,IAAI;AAAA,IAChC;AAAA,EACF;AACF,EAAE;AAEF,IAAO,8BAAQ,WAAW;AAAA,EACxB,QAAQ;AAAA,IACN,MAAM,QAAQ,IAAI;AAAA,EACpB;AAAA,EACA,eAAe,CAAC,KAAK;AACvB,CAAC;",
+  "names": []
+}
