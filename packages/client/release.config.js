@@ -7,7 +7,7 @@ module.exports = {
   commitPaths: [`${srcRoot}/*`],
   branches: [
     { name: 'main' },
-    { name: 'dev', channel: 'latest', prerelease: 'rc' },
+    { name: 'dev', channel: 'pre/rc', prerelease: 'rc' },
   ],
   plugins: [
     '@semantic-release/commit-analyzer',
