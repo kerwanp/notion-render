@@ -1,3 +1,4 @@
+import bookmarkBlockRenderer from './blocks/bookmark-block.renderer';
 import bulletedListBlockRenderer from './blocks/bulleted-list-block.renderer';
 import bulletedListItemBlockRenderer from './blocks/bulleted-list-item-block.renderer';
 import calloutBlockRenderer from './blocks/callout-block.renderer';
@@ -10,6 +11,7 @@ import heading1BlockRenderer from './blocks/heading1-block.renderer';
 import heading2BlockRenderer from './blocks/heading2-block.renderer';
 import heading3BlockRenderer from './blocks/heading3-block.renderer';
 import imageBlockRenderer from './blocks/image-block.renderer';
+import mentionBlockRenderer from './blocks/mention-block.renderer';
 import numberedListBlockRenderer from './blocks/numbered-list-block.renderer';
 import numberedListItemBlockRenderer from './blocks/numbered-list-item-block.renderer';
 import paragraphBlockRenderer from './blocks/paragraph-block.renderer';
@@ -26,6 +28,8 @@ import toDoListExtension from './extensions/to-do-list.extension';
 import { BlockRenderer, ExtensionFunc } from './types';
 
 export const BLOCK_RENDERERS: BlockRenderer<any>[] = [
+  bookmarkBlockRenderer,
+  mentionBlockRenderer,
   textBlockRenderer,
   paragraphBlockRenderer,
   imageBlockRenderer,

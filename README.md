@@ -75,7 +75,7 @@ const html = renderer.render(...results);
 | Block Type         | Supported              | Notion client required | Available in            | Notes                                           |
 | ------------------ | ---------------------- | ---------------------- | ----------------------- | ----------------------------------------------- |
 | Text               | ✅ Yes                 |                        | `@notion-render/client` | `<span>`                                        |
-| Bookmark           | ❌ Missing             |                        |                         |                                                 |
+| Bookmark           | ✅ Yes                 |                        | `@notion-render/client` | Uses `url-metadata` to generate bookmark        |
 | Breadcrumb         | ❌ Missing             |                        |                         | Embedded preview of external URL                |
 | Bulleted List Item | ✅ Yes                 |                        | `@notion-render/client` | `<ul><li>`                                      |
 | Callout            | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |
@@ -96,8 +96,8 @@ const html = renderer.render(...results);
 | Toggle Heading 3   | ✅ Yes                 | ⚠ Yes                  | `@notion-render/client` | `<details><summary><h3>` Requires Notion client |
 | Image              | ✅ Yes                 |                        | `@notion-render/client` | `<fig><img>`                                    |
 | Link preview       | ❌ Missing             |                        |                         |                                                 |
-| Mention            | ❌ Missing             |                        |                         |                                                 |
-| Numbered List Item | ✅ Yes                 |                        |                         | `<ol><li>`                                      |
+| Mention            | ✅ Yes                 |                        | `@notion-render/client` | `<span>` Returns plain text (e.g. @John Doe)    |
+| Numbered List Item | ✅ Yes                 |                        | `@notion-render/client` | `<ol><li>`                                      |
 | Paragraph          | ✅ Yes                 |                        | `@notion-render/client` | `<p>`                                           |
 | PDF                | ❌ Missing             |                        |                         |                                                 |
 | Quote              | ✅ Yes                 |                        | `@notion-render/client` | `<blockquote>`                                  |
