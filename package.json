@@ -95,7 +95,7 @@
     "axios": "^1.0.0",
     "cheerio": "^1.0.0-rc.12",
     "contentlayer": "^0.3.0",
-    "contentlayer-source-notion": "^0.0.1-alpha.20",
+    "contentlayer-source-notion": "^0.0.1-alpha.22",
     "express": "~4.18.1",
     "highlight.js": "^11.7.0",
     "next": "13.1.1",
@@ -106,8 +106,10 @@
     "tslib": "^2.3.0",
     "url-metadata": "^2.5.0"
   },
-  "resolutions": {
-    "@notion-render/client": "file:./dist/packages/client"
+  "overrides": {
+    "contentlayer-source-notion": {
+      "@notion-render/client": "file:./dist/packages/client"
+    }
   },
   "workspaces": [
     "dist/packages/client"

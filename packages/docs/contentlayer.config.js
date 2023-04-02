@@ -1,15 +1,8 @@
 import { defineDatabase, makeSource } from 'contentlayer-source-notion';
-import { NotionRenderer } from '@notion-render/client';
-import { Client } from '@notionhq/client';
 import oSlugify from 'slugify';
 
 const slugify = (value) =>
   oSlugify(value, { remove: /[*+~.()'#?/"!:@]/g, lower: true });
-
-const client = new Client({
-  auth: process.env.NOTION_TOKEN,
-});
-const renderer = new NotionRenderer({ client });
 
 export const Guide = defineDatabase(() => ({
   name: 'Guide',
@@ -46,7 +39,8 @@ export const Block = defineDatabase(() => ({
 }));
 
 export default makeSource({
-  client,
-  renderer,
+  client: {
+    auth: process.env.NOTION_TOKEN,
+  },
   databaseTypes: [Block, Guide],
 });
