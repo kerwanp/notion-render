@@ -1,6 +1,6 @@
 {
   "name": "@notion-render/client",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "type": "commonjs",
   "main": "index.js",
   "module": "index.mjs",
