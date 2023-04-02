@@ -5,28 +5,22 @@
   "projectType": "application",
   "implicitDependencies": ["client", "hljs-plugin"],
   "targets": {
-    "contentlayer-serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "contentlayer dev",
-        "cwd": "packages/docs"
-      }
-    },
     "contentlayer-build": {
+      "dependsOn": ["^build"],
       "executor": "nx:run-commands",
       "options": {
         "command": "contentlayer build",
         "cwd": "packages/docs"
       }
     },
-    "next-build": {
+    "build": {
+      "dependsOn": ["contentlayer-build"],
       "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "root": "packages/docs",
-        "outputPath": "packages/docs/dist",
-        "buildLibsFromSource": true
+        "outputPath": "packages/docs/dist"
       },
       "configurations": {
         "development": {
@@ -35,21 +29,7 @@
         "production": {}
       }
     },
-    "build": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["nx contentlayer-build docs", "nx next-build docs"],
-        "parallel": false
-      }
-    },
     "serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["nx next-serve docs", "nx contentlayer-serve docs"],
-        "parallel": true
-      }
-    },
-    "next-serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
@@ -58,11 +38,11 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "docs:next-build:development",
+          "buildTarget": "docs:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "docs:next-build:production",
+          "buildTarget": "docs:build:production",
           "dev": false
         }
       }
@@ -70,7 +50,7 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "docs:build:production"
+        "buildTarget": "docs:next-build:production"
       }
     },
     "test": {

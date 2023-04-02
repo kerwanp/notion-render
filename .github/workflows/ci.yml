@@ -113,3 +113,4 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: |
           npx nx affected --target release --all --parallel=1
+          npx nx affected --target deploy --all --parallel=1
