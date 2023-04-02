@@ -1,0 +1,17 @@
+@use '../variables/colors';
+
+@mixin background-color {
+  @each $name, $color in colors.$background-colors {
+    &.notion-color-#{$name}_background {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin foreground-color {
+  @each $name, $color in colors.$foreground-colors {
+    &.notion-color-#{$name} {
+      color: $color;
+    }
+  }
+}

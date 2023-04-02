@@ -1,0 +1,58 @@
+@use '../mixins/colors';
+
+ul.notion-to_do_list {
+  li {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 2px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    display: flex;
+
+    @include colors.background-color;
+    @include colors.foreground-color;
+
+    &[data-checked='true'] {
+      color: rgba(55, 53, 47, 0.65);
+      text-decoration: line-through rgba(55, 53, 47, 0.25);
+    }
+
+    input[type='checkbox'] {
+      appearance: none;
+      display: grid;
+      place-content: center;
+      pointer-events: none;
+
+      &:checked {
+        background-color: rgb(35, 131, 226);
+        border: 0;
+
+        &::before {
+          display: block;
+        }
+      }
+
+      &::before {
+        content: '';
+        width: 0.65em;
+        height: 0.65em;
+        box-shadow: inset 1em 1em white;
+
+        display: none;
+
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      background-color: transparent;
+
+      border-radius: 0;
+      border: solid 2px currentColor;
+
+      width: 16px;
+      height: 16px;
+      margin-top: 4px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+}

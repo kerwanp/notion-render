@@ -35,7 +35,7 @@ const NavbarItem = ({ name, slug, items }: Item) => {
         </summary>
         <div className="flex flex-col pl-4 pt-2">
           {items.map((item) => (
-            <NavbarItem key={slug} {...item} />
+            <NavbarItem key={item.slug} {...item} />
           ))}
         </div>
       </details>

@@ -75,7 +75,7 @@
     "postcss": "8.4.21",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
-    "sass": "1.55.0",
+    "sass": "^1.55.0",
     "semantic-release": "^20.1.1",
     "semantic-release-plus": "^20.0.0",
     "tailwindcss": "3.2.7",

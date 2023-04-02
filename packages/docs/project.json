@@ -24,7 +24,8 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "packages/docs",
-        "outputPath": "packages/docs/dist"
+        "outputPath": "packages/docs/dist",
+        "buildLibsFromSource": true
       },
       "configurations": {
         "development": {

@@ -26,6 +26,10 @@ export default defineConfig({
           src: '../../README.md',
           dest: '.',
         },
+        {
+          src: './sass',
+          dest: '.',
+        },
       ],
     }),
   ],

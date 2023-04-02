@@ -1,8 +1,10 @@
-import { allBlocks } from '@contentlayer/generated';
+import { allBlocks, allGuides } from '@contentlayer/generated';
 import Navbar from './Navbar';
 import { HljsProvider } from './providers/hljs.provider';
 import Sidebar, { NavbarArgs } from './Sidebar';
+
 import './styles.scss';
+import '@notion-render/client/sass/theme.scss';
 
 export default function RootLayout({
   children,
@@ -13,7 +15,17 @@ export default function RootLayout({
     a.name < b.name ? -1 : a.name > b.name ? 1 : 0
   );
 
+  const guides = allGuides.sort((a, b) => (a.order > b.order ? 1 : -1));
+
   const items: NavbarArgs['items'] = [
+    {
+      name: 'Guides',
+      slug: '/guides',
+      items: guides.map((guide) => ({
+        name: guide.name,
+        slug: `/guides/${guide.slug}`,
+      })),
+    },
     {
       name: 'Blocks',
       slug: '/blocks',

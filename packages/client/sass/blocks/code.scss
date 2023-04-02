@@ -1,0 +1,19 @@
+div.notion-code {
+  pre {
+    code {
+      display: block;
+      padding: 34px 16px 32px 32px;
+      background-color: rgb(247, 246, 243);
+      border-radius: 3px;
+      overflow-x: auto;
+    }
+  }
+  legend {
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-left: 2px;
+    line-height: 1.4;
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.65);
+  }
+}
