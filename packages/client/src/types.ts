@@ -4,15 +4,15 @@ export type Type<T> = new () => T;
 
 export type Block<T extends string = string, D = any> = {
   type: T;
-} & { [key in T]: D };
+} & { [key in T]: D } & { [key: string]: any };
 
 export type BlockRendererFunc<T extends Block = Block> = (
   data: T,
   renderer: NotionRenderer
 ) => Promise<string>;
 
-export type BlockRenderer<T extends Block = Block> = BlockRendererFunc<T> & {
+export type BlockRenderer<T extends Block = any> = BlockRendererFunc<T> & {
   type: string;
-};
+} & { [key: string]: any };
 
 export type ExtensionFunc = (blocks: Block[]) => Promise<Block[]>;

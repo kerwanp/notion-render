@@ -1,5 +1,4 @@
 import { allBlocks, allGuides, allPlugins } from '@contentlayer/generated';
-import Navbar from './Navbar';
 import Sidebar, { NavbarArgs } from './Sidebar';
 
 import './styles.scss';
@@ -50,8 +49,7 @@ export default function RootLayout({
     <html>
       <head />
       <body className="">
-        <Navbar />
-        <div className="container mx-auto flex justify-center gap-6">
+        <div className="container mx-auto flex justify-center gap-6 py-12">
           <Sidebar items={items} />
           <div className="flex-1 max-w-[700px]">{children}</div>
         </div>

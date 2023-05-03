@@ -6,7 +6,7 @@ import dts from 'vite-plugin-dts';
 import { join } from 'path';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/hljs-plugin',
+  cacheDir: '../../../node_modules/.vite/hljs-plugin',
 
   plugins: [
     dts({
@@ -16,7 +16,7 @@ export default defineConfig({
     }),
 
     viteTsConfigPaths({
-      root: '../../',
+      root: '../../../',
     }),
   ],
 

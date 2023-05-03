@@ -1,10 +1,11 @@
 import { TextRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
 import { createBlockRenderer } from '../utils/create-block-renderer';
+import * as sanitizeHtml from 'sanitize-html';
 
 export default createBlockRenderer<TextRichTextItemResponse>(
   'text',
   async (data) => {
-    let result = data.plain_text;
+    let result = sanitizeHtml(data.plain_text);
 
     if (data.href) {
       result = `<a href="${data.href}" class="notion-text-href">${result}</a>`;

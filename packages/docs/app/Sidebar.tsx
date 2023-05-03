@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 type Item = {
   name: string;
@@ -21,16 +21,10 @@ const NavbarItem = ({ name, slug, items }: Item) => {
     [pathname, slug, items]
   );
 
-  const [expanded, setExpanded] = useState<boolean>(active);
-
   if (items) {
     return (
-      <details className="group" open={expanded}>
-        <summary
-          aria-selected={active}
-          className="py-1 cursor-pointer text-lg font-semibold px-4 rounded-md hover:bg-violet-500 hover:text-white aria-selected:bg-violet-800 aria-selected:text-white transition-colors"
-          onClick={() => setExpanded(!expanded)}
-        >
+      <details className="group" open={active}>
+        <summary className="py-1 cursor-pointer text-lg font-semibold px-4 rounded-md hover:bg-violet-500 hover:text-white group-open:bg-violet-800 group-open:text-white transition-colors">
           {name}
         </summary>
         <div className="flex flex-col pl-4 pt-2">
@@ -45,7 +39,7 @@ const NavbarItem = ({ name, slug, items }: Item) => {
   return (
     <Link
       href={slug}
-      className="py-1 text-lg font-semibold px-4 rounded-md hover:bg-violet-500 hover:text-white aria-selected:bg-violet-800 aria-selected:text-white transition-colors"
+      className="py-1 text-lg font-medium px-4 rounded-md hover:bg-violet-500 hover:text-white aria-selected:bg-violet-800 aria-selected:text-white transition-colors"
       aria-selected={active}
     >
       {name}

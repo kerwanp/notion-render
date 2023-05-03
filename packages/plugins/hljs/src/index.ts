@@ -1,19 +1,25 @@
 import { createBlockRenderer, Plugin } from '@notion-render/client';
 import { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import hljs from 'highlight.js';
+import hljs, { HighlightOptions } from 'highlight.js';
 
-const codeBlockRenderer = createBlockRenderer<CodeBlockObjectResponse>(
-  'code',
-  async (data, renderer) => {
-    const code = await renderer.render(...data.code.rich_text);
+type Config = Partial<HighlightOptions>;
 
-    const result = hljs.highlight(code, { language: data.code.language });
+const codeBlockRenderer = (options: Config) =>
+  createBlockRenderer<CodeBlockObjectResponse>(
+    'code',
+    async (data, renderer) => {
+      const code = await renderer.render(...data.code.rich_text);
 
-    return `
+      const result = hljs.highlight(code, {
+        language: data.code.language,
+        ...options,
+      });
+
+      return `
             <div class="notion-${data.type}">
                 <pre><code class="language-${data.code.language}">${
-      result.value
-    }</code></pre>
+        result.value
+      }</code></pre>
                 ${
                   data.code.caption
                     ? `<legend>${await renderer.render(
@@ -23,12 +29,12 @@ const codeBlockRenderer = createBlockRenderer<CodeBlockObjectResponse>(
                 }
             </div>
         `;
-  }
-);
+    }
+  );
 
-const hljsPlugin: Plugin<undefined> = () => {
+const hljsPlugin: Plugin<Config> = (options) => {
   return {
-    renderers: [codeBlockRenderer],
+    renderers: [codeBlockRenderer(options)],
     extensions: [],
   };
 };

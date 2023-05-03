@@ -18,7 +18,10 @@
       "@contentlayer/generated": ["packages/docs/.contentlayer/generated"],
       "@notion-render/client": ["packages/client/src/index.ts"],
       "@notion-render/client/sass/*": ["packages/client/sass/*"],
-      "@notion-render/hljs-plugin": ["packages/hljs-plugin/src/index.ts"]
+      "@notion-render/hljs-plugin": ["packages/hljs-plugin/src/index.ts"],
+      "@notion-render/plugins/bookmark-plugin": [
+        "packages/plugins/bookmark-plugin/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
