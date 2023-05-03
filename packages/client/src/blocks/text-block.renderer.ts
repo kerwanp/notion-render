@@ -1,6 +1,7 @@
 import { TextRichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import sanitizeHtml from 'sanitize-html';
+
 import { createBlockRenderer } from '../utils/create-block-renderer';
-import * as sanitizeHtml from 'sanitize-html';
 
 export default createBlockRenderer<TextRichTextItemResponse>(
   'text',

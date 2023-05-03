@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {},
+  "include": [],
+  "references": [
+    { "path": "./packages/client" },
+    { "path": "./packages/plugins/hljs" },
+    { "path": "./packages/plugins/bookmark" }
+  ]
+}

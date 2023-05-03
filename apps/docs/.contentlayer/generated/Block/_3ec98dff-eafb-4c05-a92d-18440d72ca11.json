@@ -1,0 +1,18 @@
+{
+  "parameters": [
+    "Rich Text",
+    "Color"
+  ],
+  "description": "A bulleted list is a list of items prefixed with a bullet point.",
+  "requireClient": false,
+  "blockType": "bulleted_list",
+  "notionReference": "https://developers.notion.com/reference/block#bulleted-list-item",
+  "name": "Bulleted List",
+  "type": "Block",
+  "_id": "3ec98dff-eafb-4c05-a92d-18440d72ca11",
+  "_raw": {},
+  "body": {
+    "html": "\n            <div class=\"notion-code\">\n                <pre><code class=\"language-html\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">ul</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">li</span>&gt;</span>\n    Enim Fannio haberi incidisset saepius\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">li</span>&gt;</span>\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">li</span>&gt;</span>\n    Dubitatur autem Homerici humanitatis Roma\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">li</span>&gt;</span>\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">li</span>&gt;</span>\n    Fatidicum ei imperii suffragatione ei\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">li</span>&gt;</span>\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">li</span>&gt;</span>\n    Vulgi ut in clari imperiali\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">li</span>&gt;</span>\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">li</span>&gt;</span>\n    Maesti cum petivere geri gravi\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">li</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">ul</span>&gt;</span></code></pre>\n                \n            </div>\n        \n            <p>\n                \n            </p>\n        \n            <hr class=\"notion-divider\" />\n        \n            <p>\n                \n            </p>\n        <ul class=\"notion-bulleted_list\">\n            <li class=\"notion-bulleted_list_item notion-color-green_background\">\n                Enim Fannio haberi incidisset saepius\n            </li>\n        \n            <li class=\"notion-bulleted_list_item notion-color-default\">\n                Dubitatur autem Homerici humanitatis Roma\n            </li>\n        \n            <li class=\"notion-bulleted_list_item notion-color-default\">\n                Fatidicum ei imperii suffragatione ei\n            </li>\n        \n            <li class=\"notion-bulleted_list_item notion-color-blue\">\n                Vulgi ut in clari imperiali\n            </li>\n        \n            <li class=\"notion-bulleted_list_item notion-color-default\">\n                Maesti cum petivere geri gravi\n            </li>\n        </ul>"
+  },
+  "slug": "bulleted-list"
+}

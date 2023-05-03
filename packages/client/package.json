@@ -1,18 +1,29 @@
 {
   "name": "@notion-render/client",
   "version": "1.0.0-rc.5",
-  "type": "commonjs",
-  "main": "index.js",
-  "module": "index.mjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "run build --watch",
+    "build": "tsc --build",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "run lint --fix"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kerwanp/notion-render",
     "directory": "packages/client"
   },
-  "devDependencies": {
-    "@notionhq/client": "^2.2.3"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@notionhq/client": "^2.2.3",
+    "eslint": "^8.39.0",
+    "eslint-config-notion-render": "workspace:*",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "sanitize-html": "^2.10.0"
   }
 }

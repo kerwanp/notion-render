@@ -1,24 +1,25 @@
-import { Plugin, createBlockRenderer } from '@notion-render/client';
+import { createBlockRenderer, Plugin } from '@notion-render/client';
 import { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import * as cheerio from 'cheerio';
+import { load } from 'cheerio';
 
 const bookmarkBlockRenderer = createBlockRenderer<BookmarkBlockObjectResponse>(
   'bookmark',
   async (data) => {
     const html = await fetch(data.bookmark.url).then((result) => result.text());
-    const $ = cheerio.load(html);
+    const $ = load(html);
+
     const title =
-      $('meta[property="og:title"]').attr('content') ||
-      $('title').text() ||
-      $('meta[name="title"]').attr('content');
+      $('meta[property="og:title"]').attr('content') ??
+      $('meta[name="title"]').attr('content') ??
+      $('title').text();
     const description =
-      $('meta[property="og:description"]').attr('content') ||
+      $('meta[property="og:description"]').attr('content') ??
       $('meta[name="description"]').attr('content');
     const icon =
-      $('link[rel="icon"]').attr('href') ||
+      $('link[rel="icon"]').attr('href') ??
       $('link[rel="shortcut icon"]').attr('href');
     const image =
-      $('meta[property="og:image"]').attr('content') ||
+      $('meta[property="og:image"]').attr('content') ??
       $('meta[property="og:image:url"]').attr('content');
     const website = new URL(data.bookmark.url).origin;
 

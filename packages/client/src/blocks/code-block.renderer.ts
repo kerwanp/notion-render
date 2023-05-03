@@ -1,4 +1,5 @@
 import { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
 import { createBlockRenderer } from '../utils/create-block-renderer';
 
 export default createBlockRenderer<CodeBlockObjectResponse>(
@@ -7,7 +8,7 @@ export default createBlockRenderer<CodeBlockObjectResponse>(
     const code = (await renderer.render(...data.code.rich_text)).replace(
       /[\u00A0-\u9999<>&]/g,
       function (i: string) {
-        return '&#' + i.charCodeAt(0) + ';';
+        return `&#${i.charCodeAt(0)};`;
       }
     );
 
@@ -17,7 +18,7 @@ export default createBlockRenderer<CodeBlockObjectResponse>(
                   data.code.language
                 }">${code}</code></pre>
                 ${
-                  data.code.caption
+                  data.code.caption.length > 0
                     ? `<legend>${await renderer.render(
                         ...data.code.caption
                       )}</legend>`

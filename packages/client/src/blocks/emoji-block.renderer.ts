@@ -1,9 +1,9 @@
 import { createBlockRenderer } from '../utils/create-block-renderer';
 
-type EmojiBlock = {
+interface EmojiBlock {
   type: 'emoji';
   emoji: string;
-};
+}
 
 export default createBlockRenderer<EmojiBlock>(
   'emoji',

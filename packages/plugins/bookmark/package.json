@@ -1,9 +1,9 @@
 {
   "name": "@notion-render/bookmark-plugin",
   "version": "1.0.0-rc.1",
-  "type": "commonjs",
-  "main": "index.js",
-  "module": "index.mjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/kerwanp/notion-render",
@@ -11,5 +11,21 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "dev": "run build --watch",
+    "build": "tsc --build",
+    "lint": "eslint .",
+    "lint:fix": "run lint --fix"
+  },
+  "dependencies": {
+    "@notion-render/client": "workspace:*",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@notionhq/client": "^2.2.5",
+    "eslint": "^8.39.0",
+    "eslint-config-notion-render": "workspace:*",
+    "typescript": "^5.0.4"
   }
 }

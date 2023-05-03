@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.js"],
+  "sourcesContent": ["import { defineDocumentType, makeSource } from 'contentlayer/source-files';\n\nexport default makeSource({\n  contentDirPath: 'posts',\n  documentTypes: [],\n});\n"],
+  "mappings": ";AAAA,SAAS,oBAAoB,kBAAkB;AAE/C,IAAO,8BAAQ,WAAW;AAAA,EACxB,gBAAgB;AAAA,EAChB,eAAe,CAAC;AAClB,CAAC;",
+  "names": []
+}

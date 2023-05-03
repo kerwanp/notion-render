@@ -1,0 +1,16 @@
+{
+  "search.exclude": {
+    "**/dist": true,
+    "**/.turbo": true
+  },
+  "files.exclude": {
+    "**/dist": true,
+    "**/.turbo": true,
+    "**/.vercel": true,
+    "**/.husky": false,
+    "**/.yarn": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

@@ -1,4 +1,5 @@
 import { BulletedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
 import { Block, ExtensionFunc } from '../types';
 
 export type BulletedListBlock = Block<
@@ -22,7 +23,7 @@ const bulletedListExtension: ExtensionFunc = async (blocks) => {
   };
 
   for (const block of blocks) {
-    if ('processed' in block && block['processed']) {
+    if ('processed' in block && block.processed) {
       next.push(block);
       continue;
     }

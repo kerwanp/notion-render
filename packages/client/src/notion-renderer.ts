@@ -1,18 +1,19 @@
+import { Client } from '@notionhq/client';
+
 import { BLOCK_RENDERERS, EXTENSIONS } from './globals';
+import { Plugin } from './plugin';
 import {
   Block,
   BlockRenderer,
   BlockRendererFunc,
   ExtensionFunc,
 } from './types';
-import { Client } from '@notionhq/client';
-import { Plugin } from './plugin';
 
-export type NotionRendererArgs = {
+export interface NotionRendererArgs {
   /**
    * List of custom renderers.
    */
-  renderers?: BlockRenderer<any>[];
+  renderers?: BlockRenderer[];
 
   /**
    * List of extensions to improve existing blocks.
@@ -24,11 +25,11 @@ export type NotionRendererArgs = {
    * If not defined, blocks with children will not be fully supported.
    */
   client?: Client;
-};
+}
 
 export class NotionRenderer {
   private renderers: Record<string, BlockRendererFunc<any>> = {};
-  private extensions: ExtensionFunc[] = [];
+  private readonly extensions: ExtensionFunc[] = [];
   public readonly client?: Client;
 
   constructor(args: NotionRendererArgs = {}) {
@@ -63,8 +64,8 @@ export class NotionRenderer {
           console.warn(`There is no renderer for block ${block.type}`);
         return { block, renderer };
       })
-      .filter(({ renderer }) => !!renderer)
-      .map(({ block, renderer }) => renderer(block, this));
+      .filter(({ renderer }) => Boolean(renderer))
+      .map(({ block, renderer }) => renderer!(block, this));
 
     return Promise.all(promises).then((result) => result.join(''));
   }

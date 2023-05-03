@@ -1,0 +1,19 @@
+{
+  "parameters": [
+    "Color",
+    "Rich Text",
+    "Children"
+  ],
+  "description": "",
+  "requireClient": true,
+  "blockType": "toggle",
+  "notionReference": "https://developers.notion.com/reference/block#toggle-blocks",
+  "name": "Toggle",
+  "type": "Block",
+  "_id": "9b6a3093-2f70-47b9-90b3-74e9308b1900",
+  "_raw": {},
+  "body": {
+    "html": "\n            <div class=\"notion-code\">\n                <pre><code class=\"language-html\">\n  Penitus fuimus\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span>\n    Hi praefectum Campensis eius et coniux emersit tali aruspex negotio\n    inpetrarunt se ut Asbolius unde inpetrarunt coniux apud nomine eius.\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span>\n\n\n\n  Audacem nec\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span>\n    Pertinax solido securitas feriens distarent in ordinibus eum iam cum quorum\n    feriens terrebat explicatis concitat cum securitas habitus ductores gestu.\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span>\n\n\n\n  Ut fructus liberalesque\n\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span>\n    Contumaciter leviter praeceptum dicto auferri tuas saepius annonas\n    consistorium et et ambage ultimum dicto annonas ambage inconsiderate\n    conspectum inconsiderate in.\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span>\n</code></pre>\n                \n            </div>\n        \n            <p>\n                \n            </p>\n        \n            <hr class=\"notion-divider\" />\n        \n            <p>\n                \n            </p>\n        \n            <details class=\"notion-toggle notion-color-default\">\n                <summary>Penitus fuimus</summary>\n                \n            <p>\n                Hi praefectum Campensis eius et coniux emersit tali aruspex negotio inpetrarunt se ut Asbolius unde inpetrarunt coniux apud nomine eius.\n            </p>\n        \n            </details>\n        \n            <details class=\"notion-toggle notion-color-red\">\n                <summary>Audacem nec</summary>\n                \n            <p>\n                Pertinax solido securitas feriens distarent in ordinibus eum iam cum quorum feriens terrebat explicatis concitat cum securitas habitus ductores gestu.\n            </p>\n        \n            </details>\n        \n            <details class=\"notion-toggle notion-color-green_background\">\n                <summary>Ut fructus liberalesque</summary>\n                \n            <p>\n                Contumaciter leviter praeceptum dicto auferri tuas saepius annonas consistorium et et ambage ultimum dicto annonas ambage inconsiderate conspectum inconsiderate in.\n            </p>\n        \n            </details>\n        "
+  },
+  "slug": "toggle"
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.js"],
+  "sourcesContent": ["import { makeSource } from 'contentlayer-source-notion';\n\nexport default makeSource({\n  databaseTypes: [],\n});\n"],
+  "mappings": ";AAAA,SAAS,kBAAkB;AAE3B,IAAO,8BAAQ,WAAW;AAAA,EACxB,eAAe,CAAC;AAClB,CAAC;",
+  "names": []
+}

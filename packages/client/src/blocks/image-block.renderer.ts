@@ -1,4 +1,5 @@
 import { ImageBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
 import { createBlockRenderer } from '../utils/create-block-renderer';
 
 export default createBlockRenderer<ImageBlockObjectResponse>(
@@ -11,7 +12,7 @@ export default createBlockRenderer<ImageBlockObjectResponse>(
             <figure class="notion-${data.type}">
                 <img src="${src}" />
                 ${
-                  data.image.caption
+                  data.image.caption.length > 0
                     ? `<legend>${await renderer.render(
                         ...data.image.caption
                       )}</legend>`

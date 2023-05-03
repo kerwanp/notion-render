@@ -27,7 +27,7 @@ import numberedListExtension from './extensions/numbered-list.extension';
 import toDoListExtension from './extensions/to-do-list.extension';
 import { BlockRenderer, ExtensionFunc } from './types';
 
-export const BLOCK_RENDERERS: BlockRenderer<any>[] = [
+export const BLOCK_RENDERERS: BlockRenderer[] = [
   bookmarkBlockRenderer,
   mentionBlockRenderer,
   textBlockRenderer,

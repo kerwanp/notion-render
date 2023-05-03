@@ -1,5 +1,5 @@
 import { createBlockRenderer, Plugin } from '@notion-render/client';
-import { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { CodeBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import hljs, { HighlightOptions } from 'highlight.js';
 
 type Config = Partial<HighlightOptions>;
@@ -21,7 +21,7 @@ const codeBlockRenderer = (options: Config) =>
         result.value
       }</code></pre>
                 ${
-                  data.code.caption
+                  data.code.caption.length > 1
                     ? `<legend>${await renderer.render(
                         ...data.code.caption
                       )}</legend>`
@@ -32,11 +32,9 @@ const codeBlockRenderer = (options: Config) =>
     }
   );
 
-const hljsPlugin: Plugin<Config> = (options) => {
-  return {
-    renderers: [codeBlockRenderer(options)],
-    extensions: [],
-  };
-};
+const hljsPlugin: Plugin<Config> = (options) => ({
+  renderers: [codeBlockRenderer(options)],
+  extensions: [],
+});
 
 export default hljsPlugin;
