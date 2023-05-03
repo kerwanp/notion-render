@@ -3418,20 +3418,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@notion-render/client@workspace:dist/packages/client":
-  version: 0.0.0-use.local
-  resolution: "@notion-render/client@workspace:dist/packages/client"
-  dependencies:
-    "@notionhq/client": ^2.2.3
-  languageName: unknown
-  linkType: soft
-
-"@notion-render/hljs-plugin@workspace:dist/packages/hljs-plugin":
-  version: 0.0.0-use.local
-  resolution: "@notion-render/hljs-plugin@workspace:dist/packages/hljs-plugin"
-  languageName: unknown
-  linkType: soft
-
 "@notionhq/client@npm:^2.2.3":
   version: 2.2.5
   resolution: "@notionhq/client@npm:2.2.5"
