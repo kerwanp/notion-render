@@ -109,9 +109,5 @@
     "slugify": "^1.6.6",
     "tslib": "^2.3.0",
     "url-metadata": "^2.5.0"
-  },
-  "workspaces": [
-    "dist/packages/client",
-    "dist/packages/hljs-plugin"
-  ]
+  }
 }
