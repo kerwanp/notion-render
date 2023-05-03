@@ -26,7 +26,6 @@
     "@notionhq/client": "^2.2.5",
     "@types/sanitize-html": "^2.9.0",
     "eslint": "^8.39.0",
-    "eslint-config-notion-render": "workspace:*",
     "typescript": "^5.0.4"
   }
 }

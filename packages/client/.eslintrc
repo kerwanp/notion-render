@@ -1,7 +1,0 @@
-{
-  "root": true,
-  "extends": ["notion-render"],
-  "parserOptions": {
-    "project": true
-  }
-}

@@ -25,7 +25,6 @@
   "devDependencies": {
     "@notionhq/client": "^2.2.5",
     "eslint": "^8.39.0",
-    "eslint-config-notion-render": "workspace:*",
     "typescript": "^5.0.4"
   }
 }

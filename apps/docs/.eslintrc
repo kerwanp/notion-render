@@ -1,6 +1,5 @@
 {
-  "root": true,
-  "extends": ["notion-render", "next"],
+  "extends": ["next"],
   "parserOptions": {
     "project": true
   }

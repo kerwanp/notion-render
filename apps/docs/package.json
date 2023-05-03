@@ -32,7 +32,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "eslint-config-notion-render": "workspace:*",
     "sass": "^1.62.1"
   }
 }
