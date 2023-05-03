@@ -8,6 +8,7 @@
     "docs": "0.0.1-alpha.1"
   },
   "changesets": [
+    "long-panthers-retire",
     "tricky-pugs-yell"
   ]
 }
