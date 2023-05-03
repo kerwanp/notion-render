@@ -8,5 +8,7 @@
     "@notion-render/hljs-plugin": "0.0.1-alpha.0",
     "eslint-config-notion-render": "0.0.1-alpha.0"
   },
-  "changesets": []
+  "changesets": [
+    "tricky-pugs-yell"
+  ]
 }
