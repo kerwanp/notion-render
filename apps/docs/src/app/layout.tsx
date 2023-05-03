@@ -13,7 +13,9 @@ export default function RootLayout({
     a.name < b.name ? -1 : a.name > b.name ? 1 : 0
   );
 
-  const guides = allGuides.sort((a, b) => (a.order > b.order ? 1 : -1));
+  const guides = allGuides.sort((a, b) =>
+    (a.order ?? 0) > (b.order ?? 0) ? 1 : -1
+  );
 
   const plugins = allPlugins.sort((a, b) =>
     a.name < b.name ? -1 : a.name > b.name ? 1 : 0

@@ -1232,6 +1232,7 @@ __metadata:
   resolution: "@notion-render/client@workspace:packages/client"
   dependencies:
     "@notionhq/client": ^2.2.3
+    "@types/sanitize-html": ^2.9.0
     eslint: ^8.39.0
     eslint-config-notion-render: "workspace:*"
     sanitize-html: ^2.10.0
