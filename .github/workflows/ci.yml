@@ -113,4 +113,3 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn dlx nx affected --target release --all --parallel=1
-          yarn dlx nx affected --target deploy --all --parallel=1 --token=${{ secrets.VERCEL_TOKEN }}

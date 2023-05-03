@@ -119,12 +119,9 @@ You can create custom renderers to handle custom Notion plugins and override exi
 ```typescript
 import { NotionRenderer, createBlockRenderer } from '@syneki/notion-render';
 
-const paragraphRenderer = createBlockRenderer<ParagraphBlockObjectResponse>(
-  'paragraph',
-  (data, renderer) => {
-    return `<p>${renderer.render(...data.paragraph.rich_text)}</p>`;
-  }
-);
+const paragraphRenderer = createBlockRenderer<ParagraphBlockObjectResponse>('paragraph', (data, renderer) => {
+  return `<p>${renderer.render(...data.paragraph.rich_text)}</p>`;
+});
 
 const renderer = new NotionRenderer({
   renderers: [paragraphRenderer],
