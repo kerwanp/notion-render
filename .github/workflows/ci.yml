@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    name: Main
+    name: Build
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,7 @@ jobs:
         run: yarn build --ignore="apps/**/*"
 
   lint:
-    name: Main
+    name: Lint
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
