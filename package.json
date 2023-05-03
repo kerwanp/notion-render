@@ -46,7 +46,8 @@
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.2.2",
-    "turbo": "^1.9.3"
+    "turbo": "^1.9.3",
+    "typescript": "^5.0.4"
   },
   "packageManager": "yarn@3.5.1"
 }
