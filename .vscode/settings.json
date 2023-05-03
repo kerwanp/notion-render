@@ -7,7 +7,7 @@
     "**/dist": true,
     "**/.turbo": true,
     "**/.vercel": true,
-    "**/.husky": false,
+    "**/.husky": true,
     "**/.yarn": true
   },
   "editor.codeActionsOnSave": {

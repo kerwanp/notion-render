@@ -42,5 +42,5 @@
     "lint-staged": "^13.2.2",
     "turbo": "^1.9.3"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.1"
 }
