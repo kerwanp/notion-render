@@ -3968,7 +3968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:1.9.3":
+"eslint-plugin-turbo@npm:1.9.3, eslint-plugin-turbo@npm:^1.9.3":
   version: 1.9.3
   resolution: "eslint-plugin-turbo@npm:1.9.3"
   peerDependencies:
@@ -7328,6 +7328,7 @@ __metadata:
     eslint: ^8.39.0
     eslint-config-prettier: ^8.8.0
     eslint-config-turbo: ^1.9.3
+    eslint-plugin-turbo: ^1.9.3
     husky: ^8.0.3
     is-ci: ^3.0.1
     lint-staged: ^13.2.2
