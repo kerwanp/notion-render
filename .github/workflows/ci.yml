@@ -27,7 +27,9 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn policies set-version
+          yarn install --immutable
 
       - name: Build
         run: yarn build
