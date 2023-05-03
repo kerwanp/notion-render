@@ -3411,7 +3411,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@notion-render/client@workspace:*, @notion-render/client@workspace:dist/packages/client":
+"@notion-render/client@npm:1.0.0-rc.5":
+  version: 1.0.0-rc.5
+  resolution: "@notion-render/client@npm:1.0.0-rc.5"
+  checksum: b90978cba6dac73e7069f044c4b78d74e12ce306b4329aa11373da51c2003970b16701e39a0747ae288f99a59cb6f0f70737d39d592abde2866af6aa82b11c0e
+  languageName: node
+  linkType: hard
+
+"@notion-render/client@workspace:dist/packages/client":
   version: 0.0.0-use.local
   resolution: "@notion-render/client@workspace:dist/packages/client"
   dependencies:
