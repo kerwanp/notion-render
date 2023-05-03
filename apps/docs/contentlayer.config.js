@@ -1,6 +1,7 @@
 import { defineDatabase, makeSource } from 'contentlayer-source-notion';
 import oSlugify from 'slugify';
 import hljs from '@notion-render/hljs-plugin';
+import bookmark from '@notion-render/bookmark-plugin';
 import { NotionRenderer } from '@notion-render/client';
 import { Client } from '@notionhq/client';
 
@@ -11,6 +12,7 @@ const client = new Client({ auth: process.env.NOTION_TOKEN });
 const renderer = new NotionRenderer({ client });
 
 renderer.use(hljs());
+renderer.use(bookmark());
 
 export const Guide = defineDatabase(() => ({
   name: 'Guide',
