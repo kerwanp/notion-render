@@ -21,7 +21,7 @@ jobs:
       matrix:
         node-version: [18]
         npm-version: [8]
-        yarn-version: [3.5.x]
+        yarn-version: [3.5.0]
         pnpm-version: [7]
     steps:
       - name: Checkout
