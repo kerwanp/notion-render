@@ -32,6 +32,7 @@
     "apps/docs"
   ],
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@commitlint/cz-commitlint": "^17.5.0",

@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.1.0",
+  "version": "0.0.1-alpha.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,7 +30,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "eslint-config-notion-render": "*",
+    "eslint-config-notion-render": "workspace:*",
     "sass": "^1.62.1"
   }
 }

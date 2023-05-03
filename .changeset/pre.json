@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "docs": "0.0.1-alpha.0",
+    "@notion-render/client": "0.0.1-alpha.0",
+    "@notion-render/bookmark-plugin": "0.0.1-alpha.0",
+    "@notion-render/hljs-plugin": "0.0.1-alpha.0",
+    "eslint-config-notion-render": "0.0.1-alpha.0"
+  },
+  "changesets": []
+}
