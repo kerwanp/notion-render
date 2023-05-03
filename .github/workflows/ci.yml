@@ -28,7 +28,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn set version stable
           yarn install --immutable
 
       - name: Build
