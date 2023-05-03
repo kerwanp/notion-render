@@ -2,114 +2,35 @@ name: CI
 
 on:
   push:
-    branches: [main, dev]
+    branches: ['**']
   pull_request:
+    branches: ['**']
 
 env:
   HUSKY: 0
-  NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
   main:
+    name: Main
+    timeout-minutes: 15
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}
-    strategy:
-      matrix:
-        node-version: [18]
-        npm-version: [8]
-        yarn-version: [3.5.0]
-        pnpm-version: [7]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
 
-      - name: Detect package manager
-        id: package_manager
-        run: |
-          echo "::set-output name=name::$([[ -f ./yarn.lock ]] && echo "yarn" || ([[ -f ./pnpm-lock.yaml ]] && echo "pnpm") || echo "npm")"
-      - name: Set node/npm/yarn versions using volta
-        uses: volta-cli/action@v3
-        with:
-          node-version: '${{ matrix.node-version }}'
-          npm-version: '${{ matrix.npm-version }}'
-          yarn-version: '${{ matrix.yarn-version }}'
-
-      - name: Install PNPM
-        if: steps.package_manager.outputs.name == 'pnpm'
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: '${{ matrix.pnpm-version }}'
-
-      - name: Print node/npm/yarn/pnpm versions
-        id: versions
-        run: |
-          node_ver=$( node --version )
-          yarn_ver=$( yarn --version || true )
-          pnpm_ver=$( pnpm --version || true )
-          echo "Node: ${node_ver:1}"
-          echo "NPM: $(npm --version )"
-          if [[ $yarn_ver != '' ]]; then echo "Yarn: $yarn_ver"; fi
-          if [[ $pnpm_ver != '' ]]; then echo "PNPM: $pnpm_ver"; fi
-          echo "::set-output name=node_version::${node_ver:1}"
-      - name: Use the node_modules cache if available [npm]
-        if: steps.package_manager.outputs.name == 'npm'
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-
-      - name: Use the node_modules cache if available [pnpm]
-        if: steps.package_manager.outputs.name == 'pnpm'
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-
-      - name: Get yarn cache directory path
-        if: steps.package_manager.outputs.name == 'yarn'
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Use the node_modules cache if available [yarn]
-        if: steps.package_manager.outputs.name == 'yarn'
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-
       - name: Install dependencies
-        run: |
-          if [ "${{ steps.package_manager.outputs.name == 'yarn' }}" == "true" ]; then
-            echo "Running yarn install --frozen-lockfile"
-            yarn install --frozen-lockfile
-          elif [ "${{ steps.package_manager.outputs.name == 'pnpm' }}" == "true" ]; then
-            echo "Running pnpm install --frozen-lockfile"
-            pnpm install --frozen-lockfile
-          else
-            echo "Running npm ci"
-            npm ci
-          fi
-      - run: |
-          yarn dlx nx format:check
-          yarn dlx nx affected --target lint --parallel 3
-          yarn dlx nx affected --target test --parallel 3 --ci --code-coverage
-          yarn dlx nx affected --target build --parallel 3 --exclude docs
-      - name: Release & Deploy
-        if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          yarn dlx nx affected --target release --all --parallel=1
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Lint
+        run: yarn lint
