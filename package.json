@@ -12,7 +12,8 @@
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "dev": "turbo run dev",
-    "commit": "cz"
+    "commit": "cz",
+    "release:alpha": "yarn build && yarn workspaces foreach --verbose --topological-dev --parallel --no-private npm publish --tolerate-republish --tag=alpha"
   },
   "config": {
     "commitizen": {
