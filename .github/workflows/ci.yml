@@ -10,8 +10,8 @@ env:
   HUSKY: 0
 
 jobs:
-  build:
-    name: Build
+  main:
+    name: Main
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -29,23 +29,5 @@ jobs:
           yarn install
       - name: Build
         run: yarn build --filter="@notion-render/*"
-
-  lint:
-    name: Lint
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'yarn'
-      - name: Install dependencies
-        run: |
-          yarn install
       - name: Lint
         run: yarn lint --filter="@notion-render/*"
