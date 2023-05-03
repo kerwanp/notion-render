@@ -102,15 +102,15 @@ jobs:
             npm ci
           fi
       - run: |
-          npx nx format:check
-          npx nx affected --target lint --parallel 3
-          npx nx affected --target test --parallel 3 --ci --code-coverage
-          npx nx affected --target build --parallel 3 --exclude docs
+          yarn dlx nx format:check
+          yarn dlx nx affected --target lint --parallel 3
+          yarn dlx nx affected --target test --parallel 3 --ci --code-coverage
+          yarn dlx nx affected --target build --parallel 3 --exclude docs
       - name: Release & Deploy
         if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npx nx affected --target release --all --parallel=1
-          npx nx affected --target deploy --all --parallel=1 --token=${{ secrets.VERCEL_TOKEN }}
+          yarn dlx nx affected --target release --all --parallel=1
+          yarn dlx nx affected --target deploy --all --parallel=1 --token=${{ secrets.VERCEL_TOKEN }}
