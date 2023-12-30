@@ -33,7 +33,7 @@ const bookmarkBlockRenderer = createBlockRenderer<BookmarkBlockObjectResponse>(
                     ${description}
                 </p>
                 <div class="bookmark-footer">
-                    <img class="bookmark-logo" src="${website}${icon}" />
+                    {icon ? <img class="bookmark-logo" src="${website}${icon}" /> : null}
                     <div class="bookmark-url">${data.bookmark.url}</div>
                 </div>
             </div>
