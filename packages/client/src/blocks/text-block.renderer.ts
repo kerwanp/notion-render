@@ -9,7 +9,7 @@ export default createBlockRenderer<TextRichTextItemResponse>(
     let result = sanitizeHtml(data.plain_text);
 
     if (data.href) {
-      result = `<a href="${data.href}" class="notion-text-href">${result}</a>`;
+      result = `<a href="${data.href}" class="notion-text-href" target="_blank" rel="noopener nofollow">${result}</a>`;
     }
 
     if (data.annotations.color !== 'default') {
